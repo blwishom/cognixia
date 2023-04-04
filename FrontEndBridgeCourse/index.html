@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA Planet Page</title>
+
+    <!-- Stylings -->
+    <link rel="stylesheet" href="index.css">
+
+    <!-- Bootstrap CSS link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+</head>
+<body class="container-fluid p-3">
+    <!-- Bootstrap JQuery Script Links -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js" integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i" crossorigin="anonymous"></script>
+
+    <!-- We want a welcome message -->
+    <!-- Put in a Nav Bar -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><h1>Welcome to NASA Planets!</h1></a>
+        </div>
+    </nav>
+
+    <section class="mt-5 p-3">
+        <!-- About us or our page -->
+        <h3 class="col-7">
+            Hello welcome to our site. We are passionate about our solor system and want to share some information and images with you about our planets. Please feel free to explore and find out more!
+        </h3>
+
+        <!-- Have a carousel of planet images -->
+        <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+            <!-- Indicators/dots -->
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+              <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+              <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+            </div>
+
+            <!-- The slideshow/carousel -->
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="images/earth.jpg" alt="Earth" class="d-block" style="width:100%">
+                <div class="carousel-caption">
+                  <h3>Earth</h3>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="images/saturn.jpg" alt="Saturn" class="d-block" style="width:100%">
+                <div class="carousel-caption">
+                  <h3>Saturn</h3>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="images/venus.jpg" alt="Venus" class="d-block" style="width:100%">
+                <div class="carousel-caption">
+                  <h3>Venus</h3>
+                </div>
+              </div>
+            </div>
+
+            <!-- Left and right controls/icons -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </button>
+            </div>
+          </div>
+
+        <!-- Have a form for interested uusers to fill out (js will be needed) -->
+        <h3>My Favorite Planet Photo Is...</h3>
+          <div class="input-group mb-3">
+              <div class="input-group-text">
+              <input type="radio">
+            </div>
+            <input type="text" class="form-control" placeholder="Earth">
+            <div class="input-group-text">
+                <input type="radio">
+              </div>
+              <input type="text" class="form-control" placeholder="Saturn">
+              <div class="input-group-text">
+                <input type="radio">
+              </div>
+              <input type="text" class="form-control" placeholder="Venus">
+          </div>
+    </section>
+
+</body>
+</html>

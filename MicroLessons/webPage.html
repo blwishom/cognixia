@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- The head is our meta data -->
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Bootstrap CSS link -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+
+        <title>Our First Web Page</title>
+
+        <!-- Stylings -->
+        <link rel="stylesheet" href="webPage.css">
+    </head>
+
+    <!-- The body contains the data we display -->
+    <body class="container-fluid p-3">
+
+        <!-- Bootstrap JQuery Script Links -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js" integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i" crossorigin="anonymous"></script>
+
+        <!-- Our headers of different sizes -->
+        <section id="section1">
+            <h1>Our First WebPage </h1>
+            <h2>Our First WebPage</h2>
+            <h3>Our First WebPage</h3>
+            <h4>Our First WebPage</h4>
+            <h5>Our First WebPage</h5>
+            <h6>Our First WebPage</h6>
+        </section>
+
+        <!-- We have a paragraph here that we will modify with text elements -->
+        <aside id="aside1">
+            <p>
+                <strong>Lorem ipsum</strong>dolor sit amet, consectetur <b>elit, sed do eiusmod</b> tempor incididunt ut labore <em>dolore magna aliqua.</em> Ut enim ad minim veniam, <i>quis nostrud exercitation</i> ullamco laboris nisi ut <sub>aliquip ex ea commodo consequat.</sub> Duis aute <sup>irure dolor in reprehenderit in</sup> voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+        </aside>
+
+        <!-- Simple text links -->
+        <nav id="nav" style="background-color: cornsilk;">
+            <a href="setupFirstWebPage.html">This is a link</a>
+            <br>
+            <button onclick="window.location='setupFirstWebPage.html';" class="btn btn-primary">Link button</button>
+            <br>
+        </nav>
+
+        <!-- Images -->
+        <img src="https://starwalk.space/gallery/images/mars-the-ultimate-guide/1920x1080.jpg" alt="Mars image should be here" height="50%" width="50%" class="rounded">
+        <br>
+        <img src="images/MarsActivityImage.jpg" alt="Mars activity should be displayed here" height="50%" width="50%" class="rounded-circle">
+
+        <!-- Lists -->
+        <div id="lists">
+            <ol>
+                <li>Mercury</li>
+                <li>Venus</li>
+                <li>Earth</li>
+            </ol>
+            <br>
+            <ul>
+                <li>Mercury</li>
+                <li>Venus</li>
+                <li>Earth</li>
+            </ul>
+        </div>
+        <form id="textForm" action="javascript:alert('You clicked submit')" class="form-control">
+            <h4>This is Our Fieldset Form</h4>
+            <fieldset>
+                <legend>Personal Details</legend>
+                Name: <input type="text" class="form-control" placeholder="please enter name here"><br>
+                Email: <input type="text" class="form-control" placeholder="please enter email here"><br>
+                DOB: <input type="text" class="form-control" placeholder="please enter DOB here"><br>
+            </fieldset>
+            <input type="submit" value="Submit">
+        </form>
+        <hr>
+        <form id="radioForm" action="">
+            <h3>Favorite Baseball Team?</h3>
+            <input type="radio" name="baseball" value="Astros">Astros<br>
+            <input type="radio" name="baseball" value="Yankees">Yankees<br>
+            <input type="radio" name="baseball" value="Giants">Giants<br>
+
+            <h3>Do you like baseball?</h3><br>
+            <input type="checkbox" name="decision" value="Yes" id="">Yes<br>
+            <input type="checkbox" name="decision" value="No" id="">No<br>
+        </form>
+
+        <table style="width:100%;">
+            <tr>
+                <th>Name:</th>
+                <td>Bill Gates</td>
+            </tr>
+            <tr>
+                <th rowspan="2"> Telephone:</th>
+                <td>555-555-55555</td>
+                <tr>
+                    <td>333-333-3333</td>
+                </tr>
+            </tr>
+        </table>
+
+        <table style="width:100%;">
+            <tr>
+                <th>Name:</th>
+                <th colspan="2">Telephone:</th>
+            </tr>
+            <tr>
+                <td>Bill Gates</td>
+                <td>555-555-55555</td>
+                <td>333-333-3333</td>
+            </tr>
+        </table>
+        <iframe width="750px" height="400px" src="https://www.youtube.com/embed/6Lnh0zVXak4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>The video didn't load</iframe>
+    </body>
+</html>

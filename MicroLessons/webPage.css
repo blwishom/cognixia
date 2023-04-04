@@ -1,0 +1,16 @@
+/* This is our main CSS for webP  age.html, we will load this in the Header Element of webPage.html */
+
+/* Select everything (all elements) is noted by the '*' */
+* {
+    color: rgb(112, 142, 61);
+}
+
+/* HTML element selector */
+body {
+    background-color: rgb(255, 204, 141);
+}
+
+/* Calling multiple selectors */
+h1, h2 {
+    color: crimson;
+}
