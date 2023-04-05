@@ -67,18 +67,55 @@
 
 # ==================================================================================================== #
 
-# TUPPLES
-fruit_tuple = ('apple', 'orange', 'strawberry', 'peach', 'grapes', 'apple', 'apple')
-number_tuple = (1, 20, 3, 40, 5, 60)
+# # TUPPLES
+# fruit_tuple = ('apple', 'orange', 'strawberry', 'peach', 'grapes', 'apple', 'apple')
+# number_tuple = (1, 20, 3, 40, 5, 60)
 
-# count
-counted_fruit_tuple = fruit_tuple.count('apple')
-print(counted_fruit_tuple, '<=== How many times does "apple" appears in the tuple')
+# # Methods:
 
-# index
-index_fruit_tuple = fruit_tuple.index('strawberry')
-print(index_fruit_tuple, '<=== Index of "strawberry" in fruit tuple')
+# # count
+# counted_fruit_tuple = fruit_tuple.count('apple')
+# print(counted_fruit_tuple, '<=== How many times does "apple" appears in the tuple')
 
-# + operator
-add_tuples_together = fruit_tuple + number_tuple
-print(add_tuples_together, '<=== Added number tuple to fruit tuple')
+# # index
+# index_fruit_tuple = fruit_tuple.index('strawberry')
+# print(index_fruit_tuple, '<=== Index of "strawberry" in fruit tuple')
+
+# # + operator
+# add_tuples_together = fruit_tuple + number_tuple
+# print(add_tuples_together, '<=== Added number tuple to fruit tuple')
+
+# ==================================================================================================== #
+
+# SETS
+fruit_set = {'apple', 'orange', 'strawberry', 'peach', 'grapes', 'apple', 'apple'}
+number_set = {22, 13, 20, 3, 40, 5, 60, -15}
+
+# Methods:
+
+#add
+add_to_fruit_set = fruit_set.add('lemon')
+print(fruit_set, '<== add lemon to end of fruit set')
+
+# copy
+copy_number_set = number_set.copy()
+print(copy_number_set, '<== copy of number set')
+
+# discard
+print(fruit_set, '<== before discard')
+discard_fruit = fruit_set.discard('apple')
+print(fruit_set, '<== discarded "apple" from set')
+
+# pop
+pop_number = number_set.pop()
+pop_fruit = fruit_set.pop()
+print(pop_number, '<== popped lowest positive number from set')
+print(pop_fruit, '<== popped fruit from beginning of set')
+
+# remove
+remove_fruit = fruit_set.remove('peach')
+print(fruit_set, '<== removed specified fruit from set')
+
+# update
+update_fruit = fruit_set.update({'apple', 'mango', 'pineapple'})
+print(fruit_set, '<== updated fruit set')
