@@ -11,6 +11,7 @@ def rock_paper_scissors():
     while (play_again == 'yes'):
         user1_choice = input(f'{user_1}, please choose r (rock), p (paper), or s (scissors): ')
         user2_choice = input(f'{user_2}, please choose r (rock), p (paper), or s (scissors): ')
+        
         # It's a tie logic
         if (user1_choice == 'r' and user2_choice == 'r') or (user1_choice == 'p' and user2_choice == 'p') or (user1_choice == 's' and user2_choice == 's'):
             draw += 1
