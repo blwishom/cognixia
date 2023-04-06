@@ -2,7 +2,7 @@ def employees():
     full_name = input('Employee\'s full name: ')
     age = int(input('Employee\'s age: '))
     birthyear = input('Employee\'s birthyear: ')
-    email = full_name.replace(' ', '.') + birthyear[2:] + '@company.com'
+    email = (full_name.replace(' ', '.') + birthyear[2:] + '@company.com').lower()
     num = 0
     full_employee_list = []
     list_of_employees_sentences = []
