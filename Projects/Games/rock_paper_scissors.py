@@ -1,10 +1,4 @@
 import logging
-logging.debug('debug')
-logging.info('info')
-logging.warning('warning')
-logging.error('error')
-logging.critical('critical')
-
 
 # ROCK PAPER SCISSORS WITH WHILE LOOP
 print(' ')
@@ -49,8 +43,19 @@ def rock_paper_scissors():
             print(' ')
 
         play_again = input('Type "yes" to play again or "no" to quit: ')
+        if play_again == 'no':
+            print(' ')
+            print('Thanks for playing!')
 
 
 
 rock_paper_scissors()
+
+print(' ')
+logging.debug('debug')
+logging.info('info')
+logging.warning('warning')
+logging.error('error')
+logging.critical('critical')
+print(' ')
 logging.basicConfig(level=logging.INFO, filname="/home/blair/cognixia/Projects/Week1", filemode="w")

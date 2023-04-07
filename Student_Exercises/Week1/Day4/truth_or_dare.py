@@ -48,6 +48,7 @@ def truth_or_dare():
             if (play_again == 'quit'):
                 print(' ')
                 print('Thanks for playing!')
+                print(' ')
                 break
         elif (select_truth_or_dare != 'dare'):
             print(' ')
