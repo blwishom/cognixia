@@ -25,9 +25,15 @@ def number_guess():
         number_guess()
 
     play_again_input = input('Type "play" to play again or "quit" to quit the game: ')
+    print(' ')
 
     if play_again_input == 'play':
         number_guess()
+    if play_again_input == 'quit':
+        print(' ')
+        print('Thanks for playing!')
+        print(' ')
+        sys.exit()
     elif (play_again_input != 'play') or (play_again_input != 'quit'):
         print(' ')
         print('WARNING: If you type anything other than "yes" to play again or "no" to quit you will be exited from the game')
