@@ -39,9 +39,9 @@ def game_library():
 
 game_library()
 
-logging.debug('debug')
-logging.info('info')
-logging.warning('warning')
-logging.error('error')
-logging.critical('critical')
-logging.basicConfig(level=logging.INFO, filname="log_file.log", filemode="w")
+# logging.debug('debug')
+# logging.info('info')
+# logging.warning('warning')
+# logging.error('error')
+# logging.critical('critical')
+# logging.basicConfig(level=logging.INFO, filname="log_file.log", filemode="w")

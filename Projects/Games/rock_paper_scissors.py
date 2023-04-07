@@ -4,6 +4,7 @@ import logging
 print(' ')
 print('Let\'s play rock, paper, scissors!')
 print(' ')
+
 def rock_paper_scissors():
     user_1 = input('Player 1 please enter your name: ')
     print(' ')
@@ -12,7 +13,6 @@ def rock_paper_scissors():
     user2_points = 0
     draw = 0
     play_again = 'yes'
-    logging.info(f'{user_1}\s score is: {user1_points}')
 
     while (play_again == 'yes'):
         print(' ')
@@ -39,23 +39,65 @@ def rock_paper_scissors():
             print(' ')
         # Invalid choice
         elif (user1_choice or user2_choice != 'r') or (user1_choice or user2_choice != 'p') or (user1_choice or user2_choice != 's'):
-            print('Please only choose r, p, or s when playing this game. Let\'s try again!')
+            print('Please only choose r, p, or s when playing this game.')
             print(' ')
 
         play_again = input('Type "yes" to play again or "no" to quit: ')
         if play_again == 'no':
             print(' ')
             print('Thanks for playing!')
+            print(' ')
+        elif play_again != 'no':
+            print(' ')
+            print('WARNING: If you type anything other than "yes" to play again or "no" to quit you will be exited from the game')
+            print(' ')
+            play_again = input('Type "yes" to play again or "no" to quit: ')
+            print(' ')
 
+    if user1_points >= 0:
+        message = f'{user_1}\'s score:{user1_points} Draw:{draw}'
+        logging = open('/home/blair/cognixia/Projects/Games/log_file.txt', 'at')
+        logging.write(message + '\n')
+        logging.close()
+        print(message)
+        print(' ')
+    if user2_points >= 0:
+        message = f'{user_2}\'s score:{user2_points} Draw:{draw}'
+        logging = open('/home/blair/cognixia/Projects/Games/log_file.txt', 'at')
+        logging.write(message + '\n')
+        logging.close()
+        print(message)
+        print(' ')
 
+    if user1_points >= user2_points:
+        message = f'{user_1} beat {user2}!'
+        logging = open('/home/blair/cognixia/Projects/Games/log_file.txt', 'at')
+        logging.write(message + '\n')
+        logging.close()
+        print(message)
+        print(' ')
+    if user1_points <= user2_points:
+        message = f'{user_2} beat {user1}!'
+        logging = open('/home/blair/cognixia/Projects/Games/log_file.txt', 'at')
+        logging.write(message + '\n')
+        logging.close()
+        print(message)
+        print(' ')
+    if user1_points == user2_points:
+        message = f'{user_1} and {user2} tied!'
+        logging = open('/home/blair/cognixia/Projects/Games/log_file.txt', 'at')
+        logging.write(message + '\n')
+        logging.close()
+        print(message)
+        print(' ')
 
 rock_paper_scissors()
 
-print(' ')
-logging.debug('debug')
-logging.info('info')
-logging.warning('warning')
-logging.error('error')
-logging.critical('critical')
-print(' ')
-logging.basicConfig(level=logging.INFO, filname="/home/blair/cognixia/Projects/Week1", filemode="w")
+# print(' ')
+# logging.debug('debug')
+# logging.info('info')
+# logging.warning('warning')
+# logging.error('error')
+# logging.critical('critical')
+# print(' ')
+# logging.basicConfig(level=logging.INFO, filname="/home/blair/cognixia/Projects/Week1", filemode="w")
