@@ -26,7 +26,20 @@ def truth_or_dare():
             if (play_again == 'quit'):
                 print(' ')
                 print('Thanks for playing!')
+                print(' ')
                 break
+            if (play_again != 'quit'):
+                print(' ')
+                print('WARNING: If you type anything other than "play" to play again or "quit" to quit you will be exited from the game')
+                print(' ')
+                play_again = input('Type "play" to play again or "quit" to quit: ')
+                print(' ')
+                if (play_again == 'quit'):
+                    print(' ')
+                    print('Thanks for playing!')
+                    print(' ')
+                    break
+
         elif (select_truth_or_dare != 'truth'):
             print(' ')
             print('Please enter truth or dare for your response')
@@ -38,11 +51,24 @@ def truth_or_dare():
             print('Tell the truth: ', random.choice(truths))
             print(' ')
             play_again = input('Type "play" to play again or "quit" to quit: ')
+            if (play_again == 'play'):
+                truth_or_dare()
             if (play_again == 'quit'):
                 print(' ')
                 print('Thanks for playing!')
                 print(' ')
                 break
+            if (play_again != 'quit'):
+                print(' ')
+                print('WARNING: If you type anything other than "play" to play again or "quit" to quit you will be exited from the game')
+                print(' ')
+                play_again = input('Type "play" to play again or "quit" to quit: ')
+                print(' ')
+                if (play_again == 'quit'):
+                    print(' ')
+                    print('Thanks for playing!')
+                    print(' ')
+                    break
         elif (select_truth_or_dare != 'dare'):
             print(' ')
             print('Please enter truth or dare for your response')
