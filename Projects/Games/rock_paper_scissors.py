@@ -92,12 +92,3 @@ def rock_paper_scissors():
         print(' ')
 
 rock_paper_scissors()
-
-# print(' ')
-# logging.debug('debug')
-# logging.info('info')
-# logging.warning('warning')
-# logging.error('error')
-# logging.critical('critical')
-# print(' ')
-# logging.basicConfig(level=logging.INFO, filname="/home/blair/cognixia/Projects/Week1", filemode="w")

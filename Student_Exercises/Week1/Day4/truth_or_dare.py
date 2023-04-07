@@ -10,13 +10,6 @@ def truth_or_dare():
     dares = ['Put milk in a bag of chips and eat them!', 'Tell someone they have a really nice forehead!', 'Open your window and yell "HELPPPPP!"', 'Do 10 push-ups!', 'Call a friend and tell them you wet the bed last night!']
     play_again = 'play'
 
-    # if (select_truth_or_dare == 'quit'):
-    #     print(' ')
-    #     print('Thanks for playing')
-
-    # if (select_truth_or_dare == 'dare') or (select_truth_or_dare == 'truth'):
-    #     playing = True
-
     while (play_again == 'play'):
         print(' ')
         select_truth_or_dare = input('Would you like to choose a truth or a dare? ')
