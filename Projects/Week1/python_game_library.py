@@ -19,29 +19,21 @@ def game_library():
             # importing rock paper scissors module from same directory
             sys.path.append(r'/home/blair/cognixia/Projects/Games')
             import rock_paper_scissors
-            logging.info(f'{user_1}\s score is: {user1_points}')
         except:
-            pass
+            print('The rock, paper, scissors game is closed')
     elif select_game == 2:
         try:
             # importing truth or dare module from nested directory outside of current directory
             sys.path.append(r'/home/blair/cognixia/Student_Exercises/Week1/Day4')
             import truth_or_dare
         except:
-            print('Truth or Dare file was not opened')
+            print('The truth or dare game is closed')
     elif select_game == 3:
         try:
             # importing importing number guess module from same directory
             sys.path.append(r'/home/blair/cognixia/Projects/Games')
             import number_guess
         except:
-            pass
+            print('The number guess game is closed')
 
 game_library()
-
-# logging.debug('debug')
-# logging.info('info')
-# logging.warning('warning')
-# logging.error('error')
-# logging.critical('critical')
-# logging.basicConfig(level=logging.INFO, filname="log_file.log", filemode="w")

@@ -16,3 +16,5 @@ KDVM's score:1 Draw:0
 LKDBM's score:0 Draw:0
 kfvm's score:0 Draw:1
 kdfvm's score:0 Draw:1
+krfm's score:0 Draw:0
+wfok's score:1 Draw:0
