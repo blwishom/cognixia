@@ -3,7 +3,7 @@ import sys
 
 def number_guess():
     guesses = 0
-    num = random.randint(1,3)
+    num = random.randint(1,10)
     user_input = int(input('Guess a number between 1 and 10: '))
 
     if user_input == num:
@@ -25,9 +25,14 @@ def number_guess():
 
     if play_again_input == 'play':
         number_guess()
+    elif (play_again_input != 'play') or (play_again_input != 'quit'):
+        print('WARNING: If you type anything other than "yes" to play again or "no" to quit you will be exited from the game')
+        play_again_input = input('Type "play" to play again or "quit" to quit the game: ')
+        if play_again_input == 'play':
+            number_guess()
+        else:
+            sys.exit()
 
-    # if play_again_input == 'play':
-    #     number_guess()
     if play_again_input == 'quit':
         print(' ')
         print('Thanks for playing!')
