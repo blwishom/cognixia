@@ -1,5 +1,13 @@
 import sys
 
+import logging
+logging.debug('debug')
+logging.info('info')
+logging.warning('warning')
+logging.error('error')
+logging.critical('critical')
+logging.basicConfig(level=logging.INFO, filname="log_file.log", filemode="w")
+
 
 def game_library():
 
@@ -15,6 +23,7 @@ def game_library():
             # importing rock paper scissors module from same directory
             sys.path.append(r'/home/blair/cognixia/Projects/Games')
             import rock_paper_scissors
+            logging.info(f'{user_1}\s score is: {user1_points}')
         except:
             print('File was not opened')
     elif select_game == 2:
