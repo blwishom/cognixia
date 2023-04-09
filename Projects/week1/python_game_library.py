@@ -17,21 +17,21 @@ def game_library():
     if select_game == 1:
         try:
             # importing rock paper scissors module from same directory
-            sys.path.append(r'/home/blair/cognixia/Projects/Games')
+            sys.path.append(r'/home/blair/cognixia/Projects/games')
             import rock_paper_scissors
         except:
             print('The rock, paper, scissors game is closed')
     elif select_game == 2:
         try:
             # importing truth or dare module from nested directory outside of current directory
-            sys.path.append(r'/home/blair/cognixia/Student_Exercises/Week1/Day4')
+            sys.path.append(r'/home/blair/cognixia/Student_Exercises/Week1/day4')
             import truth_or_dare
         except:
             print('The truth or dare game is closed')
     elif select_game == 3:
         try:
             # importing importing number guess module from same directory
-            sys.path.append(r'/home/blair/cognixia/Projects/Games')
+            sys.path.append(r'/home/blair/cognixia/Projects/games')
             import number_guess
         except:
             print('The number guess game is closed')
