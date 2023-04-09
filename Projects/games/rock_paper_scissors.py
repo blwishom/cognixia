@@ -12,9 +12,9 @@ def rock_paper_scissors():
     user1_points = 0
     user2_points = 0
     draw = 0
-    play_again = 'yes'
+    playing = True
 
-    while (play_again == 'yes'):
+    while playing:
         print(' ')
         user1_choice = input(f'{user_1}, please choose r (rock), p (paper), or s (scissors): ')
         print(' ')
@@ -43,16 +43,26 @@ def rock_paper_scissors():
             print(' ')
 
         play_again = input('Type "yes" to play again or "no" to quit: ')
-        if play_again == 'no':
+        if play_again == 'yes':
+            playing
+        elif play_again == 'no':
             print(' ')
             print('Thanks for playing!')
             print(' ')
-        elif play_again != 'no':
+            break
+        elif play_again != 'no' or play_again != 'yes':
             print(' ')
             print('WARNING: If you type anything other than "yes" to play again or "no" to quit you will be exited from the game')
             print(' ')
             play_again = input('Type "yes" to play again or "no" to quit: ')
             print(' ')
+            if play_again == 'yes':
+                playing
+            else:
+                print(' ')
+                print('Thanks for playing!')
+                print(' ')
+                break
 
     if user1_points >= 0:
         message = f'{user_1}\'s score:{user1_points} Draw:{draw}'
