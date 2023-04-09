@@ -24,7 +24,7 @@ def game_library():
     elif select_game == 2:
         try:
             # importing truth or dare module from nested directory outside of current directory
-            sys.path.append(r'/home/blair/cognixia/Student_Exercises/Week1/day4')
+            sys.path.append(r'/home/blair/cognixia/Student_Exercises/week1/day4')
             import truth_or_dare
         except:
             print('The truth or dare game is closed')
