@@ -28,17 +28,19 @@ def truth_or_dare():
             print(' ')
             print('Please enter truth or dare for your response')
             print(' ')
-            truth_or_dare()
+            select_truth_or_dare = input('Would you like to choose a truth or a dare? ')
+            print(' ')
 
         # PLAY AGAIN BLOCK
         play_again = input('Type "play" to play again or "quit" to quit: ')
+        print(' ')
 
         if play_again == 'play':
             playing
 
         elif (play_again == 'quit'):
             print(' ')
-            print('Thanks for playing!')
+            print('Thanks for PLAYING!')
             print(' ')
             break
 
@@ -57,6 +59,11 @@ def truth_or_dare():
                 print('Thanks for playing!!!!!!!')
                 print(' ')
                 break
+        if (play_again == 'quit'):
+            print(' ')
+            print('THANKS for playing!')
+            print(' ')
+            break
 
 
 truth_or_dare()
