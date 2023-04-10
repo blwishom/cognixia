@@ -6,13 +6,13 @@ def list_comparison(collection1, collection2):
         collection2 = list(collection2)
 
         if collection1 == collection2:
-            print('Collections have the exact same elements.')
+            print('Collections below have the exact same elements:')
         else:
-            print('Collections have different elements.')
+            print('Collections below have different elements:')
 
     return (collection1, collection2)
 
 
 print(list_comparison({1, 2, 3}, (1, 2, 3)))
-print(list_comparison({1, 2, 3}, (1, 2, 3, 4)))
+print(list_comparison({1, 2, 3}, (3, 2, 1, 4)))
 print(list_comparison({1, 2, 3}, {1:1, 2:2, 3:3}))

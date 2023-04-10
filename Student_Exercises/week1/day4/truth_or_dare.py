@@ -40,7 +40,7 @@ def truth_or_dare():
 
         elif (play_again == 'quit'):
             print(' ')
-            print('Thanks for PLAYING!')
+            print('Thanks for playing!')
             print(' ')
             break
 
@@ -61,7 +61,7 @@ def truth_or_dare():
                 break
         if (play_again == 'quit'):
             print(' ')
-            print('THANKS for playing!')
+            print('Thanks for playing!')
             print(' ')
             break
 
