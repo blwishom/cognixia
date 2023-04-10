@@ -42,7 +42,7 @@ def rock_paper_scissors():
             print('Please only choose r, p, or s when playing this game.')
             print(' ')
 
-        play_again = input('Type "yes" to play again or "no" to quit: ')
+        play_again = input('Play again? Type "yes" to play again or "no" to quit: ')
         if play_again == 'yes':
             playing
         elif play_again == 'no':
@@ -54,7 +54,7 @@ def rock_paper_scissors():
             print(' ')
             print('WARNING: If you type anything other than "yes" to play again or "no" to quit you will be exited from the game')
             print(' ')
-            play_again = input('Type "yes" to play again or "no" to quit: ')
+            play_again = input('Play again? Type "yes" to play again or "no" to quit: ')
             print(' ')
             if play_again == 'yes':
                 playing
@@ -66,14 +66,14 @@ def rock_paper_scissors():
 
     if user1_points >= 0:
         message = f'{user_1}\'s score:{user1_points} Draw:{draw}'
-        logging = open('/home/blair/cognixia/Projects/Games/log_file.txt', 'at')
+        logging = open('/home/blair/cognixia/Projects/games/log_file.txt', 'at')
         logging.write(message + '\n')
         logging.close()
         print(message)
         print(' ')
     if user2_points >= 0:
         message = f'{user_2}\'s score:{user2_points} Draw:{draw}'
-        logging = open('/home/blair/cognixia/Projects/Games/log_file.txt', 'at')
+        logging = open('/home/blair/cognixia/Projects/games/log_file.txt', 'at')
         logging.write(message + '\n')
         logging.close()
         print(message)
@@ -81,7 +81,7 @@ def rock_paper_scissors():
 
     if user1_points >= user2_points:
         message = f'{user_1} beat {user2}!'
-        logging = open('/home/blair/cognixia/Projects/Games/log_file.txt', 'at')
+        logging = open('/home/blair/cognixia/Projects/games/log_file.txt', 'at')
         logging.write(message + '\n')
         logging.close()
         print(message)
