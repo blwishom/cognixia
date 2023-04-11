@@ -17,6 +17,7 @@ def employees():
             employee_log.write(str(employee_list) + '\n')
             employee_log.close()
             # print(employee_list)
+
         while num <= (added_employees - 2):
             num += 1
             # print(num, '<---NUM')
@@ -26,6 +27,15 @@ def employees():
             email = full_name.replace(' ', '.') + birthyear[2:] + '@company.com'
             print(' ')
         full_employee_list.append(({'name':full_name, 'age':age, 'birthyear':birthyear, 'email':email}))
+
+        under_25 = [employee for employee in full_employee_list if employee['age'] < 25]
+        print(list(under_25), '<----Under 25')
+        print(' ')
+
+        # for person in under_25:
+        #     print(' ')
+        #     print(person.full_name, '<---Full Name')
+
     except:
             print(' ')
             print('Please enter a valid number for how many employee you will add.')
@@ -39,4 +49,4 @@ def employees():
 
     return list_of_employees_sentences
 
-print(employees())
+employees()
