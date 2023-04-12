@@ -1,15 +1,22 @@
 from nanoid import generate
+import uuid
+from snowflake import Snowflake
+import itertools
 
 class Employee():
-    def __init__(self, id, fname, lname, doe, salary):
-        self.id = generate()
+    eid = itertools.count()
+    def __init__(self, eid, fname, lname, doe, salary):
+        # eid = uuid.uuid1()
+        # eid = generate()
+        self.eid = next(Employee.eid)
         self.fname = fname
         self.lname = lname
         self.doe = doe
         self.salary = salary
 
+
     def emp_id(self):
-        return f'{self.fname} {self.lname}\'s id is {self.id}'
+        return f'{self.fname} {self.lname}\'s id is {self.eid}'
 
     def emp_name(self):
         return f'Employee\'s name is {self.fname} {self.lname}.'
@@ -23,6 +30,7 @@ class Employee():
 emp1 = Employee(id, 'Johnny', 'Walker', '04-12-2023', 75000)
 emp2 = Employee(id, 'Yan', 'Ho', '04-12-2023', 75000)
 
+print()
 print(emp1.emp_id())
 print(emp2.emp_id())
 print(emp1.emp_name())
