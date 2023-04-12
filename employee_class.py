@@ -1,7 +1,5 @@
 from nanoid import generate
 import itertools
-import json
-import sys
 
 class Employee():
     eid = itertools.count()
@@ -26,28 +24,6 @@ class Employee():
 
     def full_emp_info(self):
         return dict({'id':self.eid, 'First Name':self.fname, 'Last Name':self.lname, 'Date of Employment':self.doe, 'Salary':self.salary})
-
-def emp_info(Employee):
-    employee_info = {
-        'id':self.eid,
-        'First Name':self.fname,
-        'Last Name':self.lname,
-        'Date of Employment':self.doe,
-        'Salary':self.salary
-    }
-
-    try:
-       with open('emp_file.csv', 'rt') as emp_file:
-        print()
-
-    except FileNotFoundError:
-        print('Emp file was not found.')
-    else:
-        print('Emp file was opened.')
-    finally:
-        emp_file.close()
-        print('Emp file is closed.')
-        sys.exit()
 
 #     def __call__(self, *args, **kwargs):
 #         print('Call function', args, kwargs)
