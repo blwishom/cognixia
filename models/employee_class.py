@@ -25,6 +25,15 @@ class Employee():
     def full_emp_info(self):
         return dict({'id':self.eid, 'First Name':self.fname, 'Last Name':self.lname, 'Date of Employment':self.doe, 'Salary':self.salary})
 
+    def to_dict(self): # Creates dictionary of values to print to CSV file
+        return {
+            'id': self.id,
+            'name': self.name,
+            'employee_count': self.employee_count,
+            'department_domain': self.department_domain,
+            'labor_costs': self.labor_costs,
+        }
+
 #     def __call__(self, *args, **kwargs):
 #         print('Call function', args, kwargs)
 
@@ -41,4 +50,3 @@ emp2 = Employee(id, 'Yan', 'Ho', '04-12-2023', 75000)
 # print(emp1.emp_name())
 # print(emp2.date_of_employment())
 # print(emp1.emp_salary())
-print(emp_info(emp1))
