@@ -38,7 +38,7 @@ emp_data2 = {emp2.eid, emp2.fname, emp2.lname, emp2.doe, emp2.salary}
 emp_data3 = {emp3.eid, emp3.fname, emp3.lname, emp3.doe, emp3.salary}
 emp_data4 = {emp4.eid, emp4.fname, emp4.lname, emp4.doe, emp4.salary}
 emp_data5 = {emp5.eid, emp5.fname, emp5.lname, emp5.doe, emp5.salary}
-employee_list.append(emp_data4)
+employee_list.append(emp_data5)
 print(employee_list)
 
 with open('employee_db.csv', 'a', encoding='UTF8', newline='') as f:
