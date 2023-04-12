@@ -20,7 +20,7 @@ def employees():
 
         # full_employee_list.append(employee_list)
         full_employee_list.append(employee_list)
-        print(full_employee_list, '<---- Full Employee List')
+        # print(full_employee_list, '<---- Full Employee List')
 
         ############# LOG FILE STORAGE ##############
         employee_log = open('employee_log.txt', 'wt')
@@ -28,25 +28,36 @@ def employees():
         employee_log.write('\n')
         employee_log.close()
 
+    # while num <= (added_employees - 2):
+    #     num += 1
+    #     # print(num, '<---NUM')
+    #     full_name = input('Employee\'s full name: ')
+    #     age = int(input('Employee\'s age: '))
+    #     birthyear = input('Employee\'s birthyear: ')
+    #     email = full_name.replace(' ', '.') + birthyear[2:] + '@company.com'
+    #     print(' ')
+    # full_employee_list.append(({'name':full_name, 'age':age, 'birthyear':birthyear, 'email':email}))
+
         ############# YAML STORAGE ##############
         yml_data = []
         with open('/home/blair/cognixia/Student_Exercises/week2/day2/employee_log.txt', 'r') as file:
             yml_data = yaml.load(file, Loader=yaml.Loader)
-            print(yml_data, '<==== YAML DATA')
+            # print(yml_data, '<==== YAML DATA')
         with open('employees2.yaml', 'wt') as file:
             data = yaml.dump(yml_data, sort_keys=False)
             file.write(data)
-            print(yml_data, '<==== YAML DATA 2')
+            # print(yml_data, '<==== YAML DATA 2')
 
-    while num <= (added_employees - 2):
-        num += 1
-        # print(num, '<---NUM')
-        full_name = input('Employee\'s full name: ')
-        age = int(input('Employee\'s age: '))
-        birthyear = input('Employee\'s birthyear: ')
-        email = full_name.replace(' ', '.') + birthyear[2:] + '@company.com'
-        print(' ')
-    full_employee_list.append(({'name':full_name, 'age':age, 'birthyear':birthyear, 'email':email}))
+        while num <= (added_employees - 2):
+            num += 1
+            # print(num, '<---NUM')
+            full_name = input('Employee\'s full name: ')
+            age = int(input('Employee\'s age: '))
+            birthyear = input('Employee\'s birthyear: ')
+            email = full_name.replace(' ', '.') + birthyear[2:] + '@company.com'
+            print(' ')
+        full_employee_list.append(employee_list)
+
 
         # under_25 = [employee for employee in full_employee_list if employee['age'] < 25]
         # print(under_25, '<----Under 25')
