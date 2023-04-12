@@ -34,7 +34,7 @@ def main_menu():
     choice = input("Enter your choice: ")
 
     if choice == "1":
-        employee_menu()
+        employee_menu() 
     elif choice == "2":
         department_menu()
     elif choice == "3":
@@ -55,16 +55,16 @@ def employee_menu():
     print("5. Back to Main Menu")
     choice = input("Enter your choice: ")
 
-    employee_manager = EmployeeManager()
+    employee_manager = EmployeeManager() #Placeholder until other sections are complete
 
     if choice == "1":
-        employee_manager.add_employee()
+        employee_manager.add_employee() #Placeholder
     elif choice == "2":
-        employee_manager.delete_employee()
+        employee_manager.delete_employee() #Placeholder
     elif choice == "3":
-        employee_manager.update_employee()
+        employee_manager.update_employee( )#Placeholder
     elif choice == "4":
-        employee_manager.view_employees()
+        employee_manager.view_employees() #Placeholder
     elif choice == "5":
         main_menu()
     else:
@@ -81,14 +81,14 @@ def department_menu():
     print("4. Back to Main Menu")
     choice = input("Enter your choice: ")
 
-    department_manager = DepartmentManager()
+    department_manager = DepartmentManager() #Placeholder until other sections are complete
 
     if choice == "1":
-        department_manager.add_department()
+        department_manager.add_department() #Placeholder
     elif choice == "2":
-        department_manager.delete_department()
+        department_manager.delete_department() #Placeholder
     elif choice == "3":
-        department_manager.view_departments()
+        department_manager.view_departments() #Placeholder
     elif choice == "4":
         main_menu()
     else:
