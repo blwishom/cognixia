@@ -54,6 +54,7 @@ def insert_employee(employee):
 
     cursor.execute(f"INSERT INTO employees (fname, lname, doe, salary) VALUES('{employee.fname}', {employee.lname}, '{employee.doe}', {employee.salary})")
     connection.commit()
+    connection.close()
 
 def view_employees():
     connection = sqlite3.connect('ems.db')
@@ -77,6 +78,7 @@ def update_employee(payload):
     results = cursor.fetchall()
     print(results)
     connection.commit()
+    connection.close()
 
 def update_department(payload):
     connection = sqlite3.connect('ems.db')
@@ -94,6 +96,7 @@ def delete_employee(employee):
     cursor.execute(f"DELETE from employees WHERE id = {employee.id}")
     print("successfully deleted")
     connection.commit()
+    connection.close()
 
 def delete_department(department):
     connection = sqlite3.connect('ems.db')
@@ -102,3 +105,4 @@ def delete_department(department):
     cursor.execute(f"DELETE from departments WHERE id = {department.id}")
     print("successfully deleted")
     connection.commit()
+    connection.close()
