@@ -1,10 +1,5 @@
-from nanoid import generate
-import itertools
-
 class Employee():
-    eid = itertools.count()
-    def __init__(self, eid, fname, lname, doe, salary):
-        self.eid = next(Employee.eid)
+    def __init__(self, fname, lname, doe, salary):
         self.fname = fname
         self.lname = lname
         self.doe = doe
@@ -25,13 +20,12 @@ class Employee():
     def full_emp_info(self):
         return dict({'id':self.eid, 'First Name':self.fname, 'Last Name':self.lname, 'Date of Employment':self.doe, 'Salary':self.salary})
 
-    def to_dict(self): # Creates dictionary of values to print to CSV file
+    def to_dict(self): # Creates dictionary of values to print to send to db
         return {
-            'id': self.id,
-            'name': self.name,
-            'employee_count': self.employee_count,
-            'department_domain': self.department_domain,
-            'labor_costs': self.labor_costs,
+            'fname': self.fname,
+            'lname': self.lname,
+            'doe': self.doe,
+            'salary': self.salary,
         }
 
 #     def __call__(self, *args, **kwargs):
@@ -42,8 +36,8 @@ class Employee():
 #     # emp_dict = dict({'id':self.eid, 'First Name':self.fname, 'Last Name':self.lname, 'Date of Employment':self.doe, 'Salary':self.salary})
 #     print('Hello')
 
-emp1 = Employee(id, 'Johnny', 'Walker', '04-12-2023', 75000)
-emp2 = Employee(id, 'Yan', 'Ho', '04-12-2023', 75000)
+# emp1 = Employee(id, 'Johnny', 'Walker', '04-12-2023', 75000)
+# emp2 = Employee(id, 'Yan', 'Ho', '04-12-2023', 75000)
 
 # print(emp1.emp_id())
 # print(emp2.emp_id())

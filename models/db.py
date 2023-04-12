@@ -31,7 +31,7 @@ def insert_department(department):
     connection = sqlite3.connect('ems.db')
     cursor = connection.cursor()
 
-    cursor.execute(f"INSERT INTO departments (name, employee_count, department_domain, labor_cost) VALUES('{department.name}', {department.employee_count}, '{department.department_domain}', {department.labor_cost})")
+    cursor.execute(f"INSERT INTO departments (name, employee_count, department_domain, labor_cost) VALUES('{department['name']}', {department['employee_count']}, '{department['department_domain']}', {department['labor_cost']})")
     connection.commit()
 
 def view_departments():
@@ -49,10 +49,11 @@ def view_departments():
     connection.close()
 
 def insert_employee(employee):
+    print(employee)
     connection = sqlite3.connect('ems.db')
     cursor = connection.cursor()
-
-    cursor.execute(f"INSERT INTO employees (fname, lname, doe, salary) VALUES('{employee.fname}', {employee.lname}, '{employee.doe}', {employee.salary})")
+    params = (employee['fname'], employee['lname'], employee['doe'], employee['salary'] )
+    cursor.execute(f"INSERT INTO employees (fname, lname, doe, salary) VALUES(?, ?, ?, ?)", params)
     connection.commit()
     connection.close()
 
