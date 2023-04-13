@@ -1,4 +1,5 @@
-from db import insert_employee, view_employees, update_department, delete_department, view_employee, create_db, insert_department, view_department
+
+from db import insert_employee, view_employees, update_department, delete_department, view_employee, create_db, view_department, insert_department
 from employee_class import Employee
 # importing datetime module
 import datetime
@@ -41,12 +42,18 @@ class Department():
         employee = Employee(fname.capitalize(), lname.capitalize(), doe, salary, department)
         insert_employee(employee.to_dict())
 
+        new_dept = self.to_dict()
+        new_dept['employee_count'] += 1
+        new_dept['labor_cost'] += int(salary)
+        new_dept['id'] = view_department(self.name)[0]
+        update_department(new_dept)
+
     def to_dict(self): # Creates dictionary of values to print to CSV file
         return {
             'name': self.name,
             'employee_count': self.employee_count,
             'department_domain': self.department_domain,
-            'labor_costs': self.labor_cost,
+            'labor_cost': self.labor_cost,
         }
 
 # TESTING
@@ -55,7 +62,8 @@ class Department():
 # department2 = Department('Engineering', 22, '@engineering.io', 100476)
 # department3 = Department('Engineering', 22, '@engineering.io', 100476)
 # create_db()
-# department.hire_employee()
+# insert_department(department.to_dict())
+# view_department('Engineering')
 # view_employees()
 # view_employee('User')
 

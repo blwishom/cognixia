@@ -21,7 +21,7 @@ create_db()
 loop = True
 while loop:
     print_menu()
-    choice = input("Enter your choice [1-8]: ")
+    choice = input("Enter your choice [0-9]: ")
 
     if choice == '1':
         view_departments()
@@ -30,9 +30,11 @@ while loop:
         view_department(name)
     elif choice == '3':
         name = input("Enter the name of the department: ")
-        employee_count = input("Enter the number of employees in the department: ")
+        # employee_count = input("Enter the number of employees in the department: ")
+        employee_count = 0
         department_domain = input("Enter the department domain: ")
-        labor_cost = input("Enter the labor cost: ")
+        # labor_cost = input("Enter the labor cost: ")
+        labor_cost = 0
         department = Department(name, employee_count, department_domain, labor_cost)
         insert_department(department.to_dict())
         print("Department added successfully.")
@@ -78,4 +80,8 @@ while loop:
     elif choice == '0':
         loop = False
     else:
+
         print("Invalid choice. Please enter a number from 1 to 8.")
+
+print_menu()
+
