@@ -32,7 +32,7 @@ def insert_department(department):
     db = sqlite3.connect('ems.db')
     cursor = db.cursor()
 
-    params = (department['name'], department['employee_count'], department['department_domain'], department['labor_costs'] )
+    params = (department['name'], department['employee_count'], department['department_domain'], department['labor_cost'] )
     cursor.execute(f"INSERT INTO departments (name, employee_count, department_domain, labor_cost) VALUES(?, ?, ?, ?)", params)
     db.commit()
 
