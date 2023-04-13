@@ -1,4 +1,4 @@
-from db import insert_employee, view_employees, update_department, delete_department, view_employee, create_db
+from db import insert_employee, view_employees, update_department, delete_department, view_employee, create_db, view_department, insert_department
 from employee_class import Employee
 # importing datetime module
 import datetime
@@ -8,11 +8,11 @@ class Department():
 
     company = 'Cognixia'
 
-    def __init__(self, name, employee_count, department_domain, labor_costs):
+    def __init__(self, name, employee_count, department_domain, labor_cost):
         self.name = name
         self.employee_count = employee_count
         self.department_domain = department_domain
-        self.labor_costs = labor_costs
+        self.labor_cost = labor_cost
 
     def hire_employee(self):
 
@@ -46,7 +46,7 @@ class Department():
             'name': self.name,
             'employee_count': self.employee_count,
             'department_domain': self.department_domain,
-            'labor_costs': self.labor_costs,
+            'labor_cost': self.labor_cost,
         }
 
 # TESTING
@@ -54,8 +54,9 @@ class Department():
 department = Department('Engineering', 22, '@engineering.io', 100476)
 # department2 = Department('Engineering', 22, '@engineering.io', 100476)
 # department3 = Department('Engineering', 22, '@engineering.io', 100476)
-# create_db()
-department.hire_employee()
+create_db()
+insert_department(department.to_dict())
+view_department('Engineering')
 # view_employees()
 # view_employee('User')
 
