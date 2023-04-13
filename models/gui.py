@@ -48,7 +48,7 @@ def emp_query():
     for emp in emp_records:
         records += str(emp[4]) + ' ' + str(emp[0]) + ' ' + str(emp[1]) + ' ' + str(emp[2]) + ' ' + str(emp[3]) + '\n'
     emp_label = Label(root, text=records)
-    emp_label.grid(row=8, column=0, pady=(10, 0), columnspan=2)
+    emp_label.grid(row=12, column=0, pady=(10, 0), columnspan=2)
 
     connection.commit()
     connection.close()
@@ -62,9 +62,36 @@ def edit_emp():
 
     emp_id = emp_id_box.get()
 
+    #Textboxes
+    f_name_edit_window = Entry(edit_window, width=30)
+    f_name_edit_window.grid(row=0, column=1, padx=15, pady=(20, 0))
+
+    l_name_edit_window = Entry(edit_window, width=30)
+    l_name_edit_window.grid(row=1, column=1, padx=15)
+
+    doe_edit_window = Entry(edit_window, width=30)
+    doe_edit_window.grid(row=2, column=1, padx=15)
+
+    salary_edit_window = Entry(edit_window, width=30)
+    salary_edit_window.grid(row=3, column=1, padx=15)
+
     cursor.execute('SELECT * FROM employees WHERE oid =' + emp_id)
     emp_records = cursor.fetchall()
     print(emp_records)
+
+    connection.execute('''UPDATE employees SET
+            first_name = :first,
+            last_name = :last,
+            date_of_employment = :doe,
+            salary = :salary
+            WHERE oid = :oid''',
+            {
+            'first': f_name_edit_window.get(),
+            'last': l_name_edit_window.get(),
+            'doe': doe_edit_window.get(),
+            'salary': salary_edit_window.get(),
+            'oid': emp_id
+            })
 
     #Textboxes
     f_name_edit_window = Entry(edit_window, width=30)
@@ -93,7 +120,7 @@ def edit_emp():
     salary_label_edit_window.grid(row=3, column=0)
 
     #Buttons
-    submit_button = Button(edit_window, text='Submit Edit', command=edit_emp)
+    submit_button = Button(edit_window, text='Submit Edit', command=submit_employee)
     submit_button.grid(row=4, column=0, columnspan=3, padx=10, pady=(30, 0), ipadx=62.5)
 
     for emp in emp_records:
@@ -115,8 +142,6 @@ def delete_emp():
     connection.commit()
     connection.close()
 
-    delete_emp_box.delete(0, END)
-
 
 #Textboxes
 f_name = Entry(root, width=30)
@@ -134,6 +159,9 @@ salary.grid(row=3, column=1, padx=15)
 emp_id_box = Entry(root, width=30)
 emp_id_box.grid(row=7, column=1)
 
+delete_box = Entry(root, width=30)
+delete_box.grid(row=10, column=1)
+
 #Textbox Labels
 f_name_label = Label(root, text='First Name')
 f_name_label.grid(row=0, column=0, pady=(10, 0))
@@ -150,6 +178,9 @@ salary_label.grid(row=3, column=0)
 emp_id__label = Label(root, text='Employee ID')
 emp_id__label.grid(row=7, column=0)
 
+delete_label = Label(root, text='Employee ID')
+delete_label.grid(row=10, column=0)
+
 #Buttons
 submit_button = Button(root, text='Add Employee to Database', command=submit_employee)
 submit_button.grid(row=4, column=0, columnspan=3, padx=10, pady=(30, 0), ipadx=62.5)
@@ -161,7 +192,7 @@ edit_button = Button(root, text='Edit Employee', command=edit_emp)
 edit_button.grid(row=9, column=0, columnspan=3, padx=10, pady=10, ipadx=90)
 
 delete_button = Button(root, text='Remove Employee', command=delete_emp)
-delete_button.grid(row=10, column=0, columnspan=3, padx=10, pady=10, ipadx=90)
+delete_button.grid(row=11, column=0, columnspan=3, padx=10, pady=10, ipadx=90)
 
 connection.commit()
 connection.close()
