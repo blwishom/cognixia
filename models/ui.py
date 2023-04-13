@@ -98,9 +98,5 @@ while loop:
 
         print("Invalid choice. Please enter a number from 1 to 8.")
 
-<<<<<<< HEAD
 # print_menu()
 
-=======
-print_menu()
->>>>>>> 68fcda962653423a264ceae999d10bc41390dbbd
