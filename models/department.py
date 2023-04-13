@@ -1,5 +1,8 @@
-from db import insert_employee, view_employees, update_department, delete_department, view_employee
+from db import insert_employee, view_employees, update_department, delete_department, view_employee, create_db
 from employee_class import Employee
+# importing datetime module
+import datetime
+
 
 class Department():
 
@@ -12,14 +15,31 @@ class Department():
         self.labor_costs = labor_costs
 
     def hire_employee(self):
-        fname = input("What is the first name of the employee: ")
-        lname = input("What is the last name of the employee: ")
-        doe = input("When did this employee start (type day then month then year with forward slashes and without spaces ex: DD/MM/YYYY): ")
-        salary = input("What is the employee salary (type a number without commas or spaces ex: 12345): ")
 
-        employee = Employee(fname.capitalize(), lname.capitalize(), doe, salary)
+        selection = False
+
+        while selection == False:
+            try:
+                fname = input("What is the first name of the employee: ")
+
+                lname = input("What is the last name of the employee: ")
+
+                doe = datetime.date.today()
+                print(f'date of hire is {doe}')
+
+                salary = input("What is the employee salary (type a number without commas or spaces ex: 12345): ")
+                if not int(salary):
+                    raise Exception
+
+                department = self.name
+
+                selection = True
+
+            except:
+                print("Please enter a valid response")
+
+        employee = Employee(fname.capitalize(), lname.capitalize(), doe, salary, department)
         insert_employee(employee.to_dict())
-        print(employee.to_dict())
 
     def to_dict(self): # Creates dictionary of values to print to CSV file
         return {
@@ -29,11 +49,12 @@ class Department():
             'labor_costs': self.labor_costs,
         }
 
+# TESTING
 
 # department = Department('Engineering', 22, '@engineering.io', 100476)
 # department2 = Department('Engineering', 22, '@engineering.io', 100476)
 # department3 = Department('Engineering', 22, '@engineering.io', 100476)
-
+# create_db()
 # department.hire_employee()
 # view_employees()
 # view_employee('User')
