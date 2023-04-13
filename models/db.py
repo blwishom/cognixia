@@ -53,7 +53,7 @@ def view_departments():
             '''
             SELECT * FROM departments
             '''
-            
+
     )
 
     results = cursor.fetchall()
@@ -153,7 +153,7 @@ def delete_department(department):
     cursor = db.cursor()
 
     id = department['id']
-    cursor.execute(f"DELETE from employees WHERE id = ?", id)
+    cursor.execute(f"DELETE from departments WHERE id = ?", id)
     print("successfully deleted")
     db.commit()
     db.close()
