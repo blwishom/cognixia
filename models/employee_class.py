@@ -1,9 +1,11 @@
+
 class Employee():
-    def __init__(self, fname, lname, doe, salary):
+    def __init__(self, fname, lname, doe, salary, department):
         self.fname = fname
         self.lname = lname
         self.doe = doe
         self.salary = salary
+        self.department = department
 
     def emp_id(self):
         return f'{self.fname} {self.lname}\'s id is {self.eid}'
@@ -13,6 +15,9 @@ class Employee():
 
     def date_of_employment(self):
         return f'{self.fname} {self.lname}\'s date of employment began on {self.doe}.'
+
+    def emp_department(self):
+        return f"{self.fname} {self.lname}'s department is {self.department}"
 
     def emp_salary(self):
         return f'{self.fname} {self.lname}\'s salary is {self.salary}.'
@@ -26,6 +31,7 @@ class Employee():
             'lname': self.lname,
             'doe': self.doe,
             'salary': self.salary,
+            'department': self.department
         }
 
 #     def __call__(self, *args, **kwargs):
@@ -36,7 +42,8 @@ class Employee():
 #     # emp_dict = dict({'id':self.eid, 'First Name':self.fname, 'Last Name':self.lname, 'Date of Employment':self.doe, 'Salary':self.salary})
 #     print('Hello')
 
-# emp1 = Employee(id, 'Johnny', 'Walker', '04-12-2023', 75000)
+# emp1 = Employee('Johnny', 'Walker', '04-12-2023', 75000, 'Engineering')
+# emp1.date_of_employment()
 # emp2 = Employee(id, 'Yan', 'Ho', '04-12-2023', 75000)
 
 # print(emp1.emp_id())
