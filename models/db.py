@@ -100,7 +100,7 @@ def view_department(name):
     db = sqlite3.connect('ems.db')
 
     cursor = db.cursor()
-    cursor.execute(f"SELECT * FROM employees WHERE lname = ?", [name])
+    cursor.execute(f"SELECT * FROM departments WHERE name = ?", [name])
 
     results = cursor.fetchone()
     print(results)
