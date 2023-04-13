@@ -66,10 +66,6 @@ def edit_emp():
     emp_records = cursor.fetchall()
     print(emp_records)
 
-    # records = ''
-    # for emp in emp_records:
-    #     records += str(emp[4]) + ' ' + str(emp[0]) + ' ' + str(emp[1]) + ' ' + str(emp[2]) + ' ' + str(emp[3]) + '\n'
-
     #Textboxes
     f_name_edit_window = Entry(edit_window, width=30)
     f_name_edit_window.grid(row=0, column=1, padx=15, pady=(20, 0))
