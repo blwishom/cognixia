@@ -1,5 +1,6 @@
 from department import Department
-from db import create_db, view_departments, view_department, insert_department, update_department, delete_department, view_employees
+from db import create_db, view_departments, view_department, insert_department, update_department, delete_department, view_employees, delete_employee, update_employee
+import datetime
 
 def print_menu():
     print(30 * "-", "MENU", 30 * "-")
@@ -10,7 +11,9 @@ def print_menu():
     print("5. Delete Department")
     print("6. Hire Employee")
     print("7. View All Employees")
-    print("8. Quit")
+    print("8. Delete Employee")
+    print("9. Update Employee")
+    print("0. Quit")
     print(67 * "-")
 
 create_db()
@@ -58,6 +61,21 @@ while loop:
     elif choice == '7':
         view_employees()
     elif choice == '8':
+        id = input("Enter the ID of the employee to delete: ")
+        payload = {'id': id}
+        delete_employee(payload)
+        print("Employee deleted successfully.")
+    elif choice == '9':
+        id = input("Enter the ID of the employee to update: ")
+        fname = input("Enter the new first name of the employee: ")
+        lname = input("Enter the new last name of the employee: ")
+        doe = datetime.date.today()
+        salary = input("Enter the new salary of the employee: ")
+        department = input("Enter the new department of the employee: ")
+        payload = {'id': id, 'fname': fname, 'lname': lname, 'doe': doe, 'salary': salary, 'department' : department}
+        update_employee(payload)
+        print("Department updated successfully.")
+    elif choice == '0':
         loop = False
     else:
         print("Invalid choice. Please enter a number from 1 to 8.")

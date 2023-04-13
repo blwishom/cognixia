@@ -100,7 +100,7 @@ def view_department(name):
     db = sqlite3.connect('ems.db')
 
     cursor = db.cursor()
-    cursor.execute(f"SELECT * FROM employees WHERE lname = ?", [name])
+    cursor.execute(f"SELECT * FROM departments WHERE name = ?", [name])
 
     results = cursor.fetchone()
     print(results)
@@ -133,7 +133,7 @@ def update_employee(payload):
     department = payload['department']
     id = payload['id']
 
-    cursor.execute(f"UPDATE departments set fname = ?, lname = ?, doe = ?, salary = ? WHERE id = ?", (fname, lname, doe, salary, department, id))
+    cursor.execute(f"UPDATE employees set fname = ?, lname = ?, doe = ?, salary = ?, department = ? WHERE id = ?", (fname, lname, doe, salary, department, id))
 
     db.commit()
     db.close()
@@ -153,7 +153,7 @@ def delete_department(department):
     cursor = db.cursor()
 
     id = department['id']
-    cursor.execute(f"DELETE from employees WHERE id = ?", id)
+    cursor.execute(f"DELETE from departments WHERE id = ?", id)
     print("successfully deleted")
     db.commit()
     db.close()
