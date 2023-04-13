@@ -61,3 +61,5 @@ while loop:
         loop = False
     else:
         print("Invalid choice. Please enter a number from 1 to 8.")
+
+print_menu()
