@@ -32,7 +32,7 @@ while loop:
         name = input("Enter the name of the department: ")
         # employee_count = input("Enter the number of employees in the department: ")
         employee_count = 0
-        department_domain = input("Enter the department domain: ")
+        department_domain = f"@{name}.io"
         # labor_cost = input("Enter the labor cost: ")
         labor_cost = 0
         department = Department(name, employee_count, department_domain, labor_cost)
@@ -98,5 +98,9 @@ while loop:
 
         print("Invalid choice. Please enter a number from 1 to 8.")
 
+<<<<<<< HEAD
 # print_menu()
 
+=======
+print_menu()
+>>>>>>> 68fcda962653423a264ceae999d10bc41390dbbd
