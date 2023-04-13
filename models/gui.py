@@ -41,14 +41,14 @@ def emp_query():
     cursor = connection.cursor()
 
     cursor.execute('SELECT *, oid FROM employees')
-    emp_records = cursor.fetchall()
+    emp_records = cursor.fetchmany(5)
     print(emp_records)
 
     records = ''
     for emp in emp_records:
-        records += str(emp[0] + ' ' + str(emp[0])) + "\n"
-        emp_label = Label(root, text=emp_records)
-        emp_label.grid(row=6, column=0, columnspan=2)
+        records += str(emp[4]) + str(emp[0:4]) + '\n'
+    emp_label = Label(root, text=records)
+    emp_label.grid(row=6, column=0, columnspan=2)
 
     connection.commit()
     connection.close()
