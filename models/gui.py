@@ -41,22 +41,34 @@ def emp_query():
     cursor = connection.cursor()
 
     cursor.execute('SELECT *, oid FROM employees')
-    emp_records = cursor.fetchmany(5)
+    emp_records = cursor.fetchall()
     print(emp_records)
 
     records = ''
     for emp in emp_records:
-        records += str(emp[4]) + str(emp[0:4]) + '\n'
+        records += str(emp[4]) + ' ' + str(emp[0]) + ' ' + str(emp[1]) + ' ' + str(emp[2]) + ' ' + str(emp[3]) + '\n'
     emp_label = Label(root, text=records)
-    emp_label.grid(row=6, column=0, columnspan=2)
+    emp_label.grid(row=10, column=0, columnspan=2)
 
     connection.commit()
     connection.close()
 
+def delete_emp():
+    connection = sqlite3.connect('ems.db')
+    cursor = connection.cursor()
+
+    cursor.execute('DELETE FROM employees WHERE oid=' + delete_emp_box.get())
+    emp_records = cursor.fetchall()
+
+    connection.commit()
+    connection.close()
+
+    delete_emp_box.delete(0, END)
+
 
 #Textboxes
 f_name = Entry(root, width=30)
-f_name.grid(row=0, column=1, padx=15)
+f_name.grid(row=0, column=1, padx=15, pady=(20, 0))
 
 l_name = Entry(root, width=30)
 l_name.grid(row=1, column=1, padx=15)
@@ -67,9 +79,12 @@ doe.grid(row=2, column=1, padx=15)
 salary = Entry(root, width=30)
 salary.grid(row=3, column=1, padx=15)
 
+delete_emp_box = Entry(root, width=30)
+delete_emp_box.grid(row=7, column=1)
+
 #Textbox Labels
 f_name_label = Label(root, text='First Name')
-f_name_label.grid(row=0, column=0)
+f_name_label.grid(row=0, column=0, pady=(10, 0))
 
 l_name_label = Label(root, text='Last Name')
 l_name_label.grid(row=1, column=0)
@@ -80,11 +95,18 @@ doe_label.grid(row=2, column=0)
 salary_label = Label(root, text='Salary')
 salary_label.grid(row=3, column=0)
 
+delete_label = Label(root, text='Delete Employee ID')
+delete_label.grid(row=7, column=0)
+
+#Buttons
 submit_button = Button(root, text='Add Employee to Database', command=submit_employee)
-submit_button.grid(row=4, column=0, columnspan=3, padx=10, pady=10, ipadx=90)
+submit_button.grid(row=4, column=0, columnspan=3, padx=10, pady=(30, 0), ipadx=62.5)
 
 query_button = Button(root, text='Employee Records', command=emp_query)
 query_button.grid(row=5, column=0, columnspan=3, padx=10, pady=10, ipadx=90)
+
+delete_button = Button(root, text='Remove Employee', command=delete_emp)
+delete_button.grid(row=9, column=0, columnspan=3, padx=10, pady=10, ipadx=90)
 
 connection.commit()
 connection.close()
