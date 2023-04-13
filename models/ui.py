@@ -73,10 +73,16 @@ while loop:
         lname = input("Enter the new last name of the employee: ")
         doe = datetime.date.today()
         salary = input("Enter the new salary of the employee: ")
-        department = input("Enter the new department of the employee: ")
-        payload = {'id': id, 'fname': fname, 'lname': lname, 'doe': doe, 'salary': salary, 'department' : department}
+        while(True):
+            department_name = input("Enter the name of the department to hire an employee: ")
+            department = view_department(department_name)
+            if department:
+                break
+            else:
+                True
+        payload = {'id': id, 'fname': fname, 'lname': lname, 'doe': doe, 'salary': salary, 'department' : department_name}
         update_employee(payload)
-        print("Department updated successfully.")
+        print("Employee updated successfully.")
     elif choice == '0':
         loop = False
     else:
