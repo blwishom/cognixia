@@ -51,12 +51,12 @@ class Department():
 
 # TESTING
 
-department = Department('Engineering', 22, '@engineering.io', 100476)
+# department = Department('Engineering', 22, '@engineering.io', 100476)
 # department2 = Department('Engineering', 22, '@engineering.io', 100476)
 # department3 = Department('Engineering', 22, '@engineering.io', 100476)
-create_db()
-insert_department(department.to_dict())
-view_department('Engineering')
+# create_db()
+# insert_department(department.to_dict())
+# view_department('Engineering')
 # view_employees()
 # view_employee('User')
 
