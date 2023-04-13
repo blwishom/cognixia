@@ -48,6 +48,7 @@ def view_departments():
     results = cursor.fetchall()
     print(results)
     db.close()
+    return results
 
 def insert_employee(employee):
     print(employee)
@@ -71,6 +72,7 @@ def view_employees():
     results = cursor.fetchall()
     print(results)
     db.close()
+    return results
 
 def view_employee(lname):
     db = sqlite3.connect('ems.db')
@@ -81,6 +83,7 @@ def view_employee(lname):
     results = cursor.fetchone()
     print(results)
     db.close()
+    return results
 
 def view_department(name):
     db = sqlite3.connect('ems.db')
@@ -91,6 +94,7 @@ def view_department(name):
     results = cursor.fetchone()
     print(results)
     db.close()
+    return results
 
 def update_department(payload):
     db = sqlite3.connect('ems.db')

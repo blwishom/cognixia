@@ -1,4 +1,6 @@
-class Employee():
+from department import Department
+
+class Employee(Department):
     def __init__(self, fname, lname, doe, salary):
         self.fname = fname
         self.lname = lname
