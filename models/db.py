@@ -22,7 +22,8 @@ def create_db():
             [fname] VARCHAR(255) NOT NULL,
             [lname] VARCHAR(255) NOT NULL,
             [doe] VARCHAR(255) NOT NULL,
-            [salary] INTEGER NOT NULL
+            [salary] INTEGER NOT NULL,
+            [department] TEXT
             );
             ''')
     db.close()
@@ -54,8 +55,8 @@ def insert_employee(employee):
     print(employee)
     db = sqlite3.connect('ems.db')
     cursor = db.cursor()
-    params = (employee['fname'], employee['lname'], employee['doe'], employee['salary'] )
-    cursor.execute(f"INSERT INTO employees (fname, lname, doe, salary) VALUES(?, ?, ?, ?)", params)
+    params = (employee['fname'], employee['lname'], employee['doe'], employee['salary'], employee['department'] )
+    cursor.execute(f"INSERT INTO employees (fname, lname, doe, salary, department) VALUES(?, ?, ?, ?, ?)", params)
     db.commit()
     db.close()
 
@@ -119,9 +120,10 @@ def update_employee(payload):
     lname = payload['lname']
     doe = payload['doe']
     salary = payload['salary']
+    department = payload['department']
     id = payload['id']
 
-    cursor.execute(f"UPDATE departments set fname = ?, lname = ?, doe = ?, salary = ? WHERE id = ?", (fname, lname, doe, salary, id))
+    cursor.execute(f"UPDATE departments set fname = ?, lname = ?, doe = ?, salary = ? WHERE id = ?", (fname, lname, doe, salary, department, id))
 
     db.commit()
     db.close()
