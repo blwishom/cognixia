@@ -1,9 +1,9 @@
 import sqlite3
 
 def create_db():
-    connection = sqlite3.connect('ems.db')
+    db = sqlite3.connect('ems.db')
 
-    cursor = connection.cursor()
+    cursor = db.cursor()
 
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS departments (
@@ -25,19 +25,20 @@ def create_db():
             [salary] INTEGER NOT NULL
             );
             ''')
-    connection.close()
+    db.close()
 
 def insert_department(department):
-    connection = sqlite3.connect('ems.db')
-    cursor = connection.cursor()
+    db = sqlite3.connect('ems.db')
+    cursor = db.cursor()
 
-    cursor.execute(f"INSERT INTO departments (name, employee_count, department_domain, labor_cost) VALUES('{department['name']}', {department['employee_count']}, '{department['department_domain']}', {department['labor_cost']})")
-    connection.commit()
+    params = (department['name'], department['employee_count'], department['department_domain'], department['labor_cost'] )
+    cursor.execute(f"INSERT INTO departments (name, employee_count, department_domain, labor_cost) VALUES(?, ?, ?, ?)", params)
+    db.commit()
 
 def view_departments():
-    connection = sqlite3.connect('ems.db')
+    db = sqlite3.connect('ems.db')
 
-    cursor = connection.cursor()
+    cursor = db.cursor()
     cursor.execute(
             '''
             SELECT * FROM departments
@@ -46,21 +47,21 @@ def view_departments():
 
     results = cursor.fetchall()
     print(results)
-    connection.close()
+    db.close()
 
 def insert_employee(employee):
     print(employee)
-    connection = sqlite3.connect('ems.db')
-    cursor = connection.cursor()
+    db = sqlite3.connect('ems.db')
+    cursor = db.cursor()
     params = (employee['fname'], employee['lname'], employee['doe'], employee['salary'] )
     cursor.execute(f"INSERT INTO employees (fname, lname, doe, salary) VALUES(?, ?, ?, ?)", params)
-    connection.commit()
-    connection.close()
+    db.commit()
+    db.close()
 
 def view_employees():
-    connection = sqlite3.connect('ems.db')
+    db = sqlite3.connect('ems.db')
 
-    cursor = connection.cursor()
+    cursor = db.cursor()
     cursor.execute(
             '''
             SELECT * FROM employees
@@ -69,41 +70,74 @@ def view_employees():
 
     results = cursor.fetchall()
     print(results)
-    connection.close()
+    db.close()
 
-def update_employee(payload):
-    connection = sqlite3.connect('ems.db')
-    cursor = connection.cursor()
+def view_employee(lname):
+    db = sqlite3.connect('ems.db')
 
-    cursor.execute(f"UPDATE employees set name = '{payload.name}', employee_count = {payload.employee_count}, department_domain = '{payload.department_domain}', labor_cost = {payload.labor_cost}) WHERE id = {payload.id}")
-    results = cursor.fetchall()
+    cursor = db.cursor()
+    cursor.execute("SELECT * FROM employees WHERE lname = ?", [lname])
+
+    results = cursor.fetchone()
     print(results)
-    connection.commit()
-    connection.close()
+    db.close()
+
+def view_department(name):
+    db = sqlite3.connect('ems.db')
+
+    cursor = db.cursor()
+    cursor.execute(f"SELECT * FROM employees WHERE lname = ?", [name])
+
+    results = cursor.fetchone()
+    print(results)
+    db.close()
 
 def update_department(payload):
-    connection = sqlite3.connect('ems.db')
-    cursor = connection.cursor()
+    db = sqlite3.connect('ems.db')
+    cursor = db.cursor()
 
-    cursor.execute(f"UPDATE departments set fname = '{payload.fname}', lname = {payload.lname}, doe = '{payload.doe}', salary = {payload.salary}) WHERE id = {payload.id}")
-    results = cursor.fetchall()
-    print(results)
-    connection.commit()
+    name = payload['name']
+    employee_count = payload['employee_count']
+    department_domain = payload['department_domain']
+    labor_cost = payload['labor_cost']
+
+    id = payload['id']
+    cursor.execute(f"UPDATE departments set name = ?, employee_count = ?, department_domain = ?, labor_cost = ? WHERE id = ?", (name, employee_count, department_domain, labor_cost, id))
+
+    db.commit()
+    db.close()
+
+def update_employee(payload):
+    db = sqlite3.connect('ems.db')
+    cursor = db.cursor()
+
+    fname = payload['fname']
+    lname = payload['lname']
+    doe = payload['doe']
+    salary = payload['salary']
+    id = payload['id']
+
+    cursor.execute(f"UPDATE departments set fname = ?, lname = ?, doe = ?, salary = ? WHERE id = ?", (fname, lname, doe, salary, id))
+
+    db.commit()
+    db.close()
 
 def delete_employee(employee):
-    connection = sqlite3.connect('ems.db')
-    cursor = connection.cursor()
+    db = sqlite3.connect('ems.db')
+    cursor = db.cursor()
 
-    cursor.execute(f"DELETE from employees WHERE id = {employee.id}")
+    id = employee['id']
+    cursor.execute(f"DELETE from employees WHERE id = ?", id)
     print("successfully deleted")
-    connection.commit()
-    connection.close()
+    db.commit()
+    db.close()
 
 def delete_department(department):
-    connection = sqlite3.connect('ems.db')
-    cursor = connection.cursor()
+    db = sqlite3.connect('ems.db')
+    cursor = db.cursor()
 
-    cursor.execute(f"DELETE from departments WHERE id = {department.id}")
+    id = department['id']
+    cursor.execute(f"DELETE from employees WHERE id = ?", id)
     print("successfully deleted")
-    connection.commit()
-    connection.close()
+    db.commit()
+    db.close()

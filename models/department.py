@@ -1,4 +1,4 @@
-from db import insert_employee, view_employees
+from db import insert_employee, view_employees, update_department, delete_department, view_employee
 from employee_class import Employee
 
 class Department():
@@ -30,9 +30,25 @@ class Department():
         }
 
 
-department = Department('Engineering', 22, '@engineering.io', 100476)
-department2 = Department('Engineering', 22, '@engineering.io', 100476)
-department3 = Department('Engineering', 22, '@engineering.io', 100476)
+# department = Department('Engineering', 22, '@engineering.io', 100476)
+# department2 = Department('Engineering', 22, '@engineering.io', 100476)
+# department3 = Department('Engineering', 22, '@engineering.io', 100476)
 
-department.hire_employee()
-view_employees()
+# department.hire_employee()
+# view_employees()
+# view_employee('User')
+
+# payload = {
+#     'id': 1,
+#     'name': 'engineering2',
+#     'employee_count': 23,
+#     'department_domain': '@engineering2.io',
+#     'labor_cost': 120000
+# }
+
+# department = {
+#     'id': '1'
+# }
+
+# update_department(payload)
+# delete_department(department)
