@@ -53,6 +53,47 @@ def emp_query():
     connection.commit()
     connection.close()
 
+def update_emp():
+    edit_window = tkinter.Tk()
+    edit_window.title('Update Employee Record')
+    edit_window.geometry('400x300')
+    connection = sqlite3.connect('ems.db')
+    cursor = connection.cursor()
+
+     #Textboxes
+    f_name_edit_window = Entry(edit_window, width=30)
+    f_name_edit_window.grid(row=0, column=1, padx=15, pady=(20, 0))
+
+    l_name_edit_window = Entry(edit_window, width=30)
+    l_name_edit_window.grid(row=1, column=1, padx=15)
+
+    doe_edit_window = Entry(edit_window, width=30)
+    doe_edit_window.grid(row=2, column=1, padx=15)
+
+    salary_edit_window = Entry(edit_window, width=30)
+    salary_edit_window.grid(row=3, column=1, padx=15)
+
+    emp_id = delete_box.get()
+
+    connection.execute('''UPDATE employees SET
+            first_name = :first,
+            last_name = :last,
+            date_of_employment = :doe,
+            salary = :salary
+            WHERE oid = :oid''',
+            {
+            'first': f_name_edit_window.get(),
+            'last': l_name_edit_window.get(),
+            'doe': doe_edit_window.get(),
+            'salary': salary_edit_window.get(),
+            'oid': emp_id
+            })
+
+    connection.commit()
+    connection.close()
+    edit_window.destroy()
+
+
 def edit_emp():
     edit_window = tkinter.Tk()
     edit_window.title('Update Employee Record')
@@ -132,11 +173,12 @@ def edit_emp():
     connection.commit()
     connection.close()
 
+# DELETE EMPLOYEE
 def delete_emp():
     connection = sqlite3.connect('ems.db')
     cursor = connection.cursor()
 
-    cursor.execute('DELETE FROM employees WHERE oid=' + emp_id_box.get())
+    cursor.execute('DELETE FROM employees WHERE oid=' + delete_box.get())
     emp_records = cursor.fetchall()
 
     connection.commit()
@@ -175,11 +217,11 @@ doe_label.grid(row=2, column=0)
 salary_label = Label(root, text='Salary')
 salary_label.grid(row=3, column=0)
 
-emp_id__label = Label(root, text='Employee ID')
+emp_id__label = Label(root, text='Edit Employee ID')
 emp_id__label.grid(row=7, column=0)
 
-delete_label = Label(root, text='Employee ID')
-delete_label.grid(row=10, column=0)
+delete_box_label = Label(root, text='Remove Employee ID')
+delete_box_label.grid(row=10, column=0)
 
 #Buttons
 submit_button = Button(root, text='Add Employee to Database', command=submit_employee)
