@@ -1,5 +1,5 @@
 from department import Department
-from db import create_db, view_departments, view_department, insert_department, update_department, delete_department
+from db import create_db, view_departments, view_department, insert_department, update_department, delete_department, view_employees
 
 def print_menu():
     print(30 * "-", "MENU", 30 * "-")
