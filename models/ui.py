@@ -13,7 +13,8 @@ def print_menu():
     print("7. View All Employees")
     print("8. Delete Employee")
     print("9. Update Employee")
-    print("0. Quit")
+    print("10. View an Employee")
+    print("11. Quit")
     print(67 * "-")
 
 create_db()
@@ -21,7 +22,7 @@ create_db()
 loop = True
 while loop:
     print_menu()
-    choice = input("Enter your choice [0-9]: ")
+    choice = input("Enter your choice [0-11]: ")
 
     if choice == '1':
         view_departments()
@@ -91,12 +92,14 @@ while loop:
         department = input("Enter the new department of the employee: ")
         payload = {'id': id, 'fname': fname, 'lname': lname, 'doe': doe, 'salary': salary, 'department' : department}
         update_employee(payload)
-        print("Department updated successfully.")
-    elif choice == '0':
+        print("Employee updated successfully.")
+    elif choice == '10':
+        lname = input("Enter the last name of the Employee: ")
+        view_employee(lname.capitalize())
+    elif choice == '11':
         loop = False
     else:
 
         print("Invalid choice. Please enter a number from 1 to 8.")
 
 # print_menu()
-
