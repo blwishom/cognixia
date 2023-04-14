@@ -31,19 +31,9 @@ def create_db():
 def insert_department(department):
     db = sqlite3.connect('ems.db')
     cursor = db.cursor()
-
-    params = (department['name'], department['employee_count'], department['department_domain'], department['labor_costs'] )
+    params = (department['name'], department['employee_count'], department['department_domain'], department['labor_cost'] )
     cursor.execute(f"INSERT INTO departments (name, employee_count, department_domain, labor_cost) VALUES(?, ?, ?, ?)", params)
     db.commit()
-
-
-def view_departments():
-    db = sqlite3.connect('ems.db')
-    cursor = db.cursor()
-    cursor.execute('SELECT * FROM departments')
-    results = cursor.fetchall()
-    db.close()
-    return results
 
 def view_departments():
     db = sqlite3.connect('ems.db')
@@ -133,7 +123,7 @@ def update_employee(payload):
     department = payload['department']
     id = payload['id']
 
-    cursor.execute(f"UPDATE departments set fname = ?, lname = ?, doe = ?, salary = ? WHERE id = ?", (fname, lname, doe, salary, department, id))
+    cursor.execute(f"UPDATE employees set fname = ?, lname = ?, doe = ?, salary = ?, department = ? WHERE id = ?", (fname, lname, doe, salary, department, id))
 
     db.commit()
     db.close()
