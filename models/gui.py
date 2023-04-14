@@ -62,19 +62,6 @@ def update_emp():
     connection = sqlite3.connect('ems.db')
     cursor = connection.cursor()
 
-    #  #Textboxes
-    # f_name_edit_window = Entry(edit_window, width=30)
-    # f_name_edit_window.grid(row=0, column=1, padx=15, pady=(20, 0))
-
-    # l_name_edit_window = Entry(edit_window, width=30)
-    # l_name_edit_window.grid(row=1, column=1, padx=15)
-
-    # doe_edit_window = Entry(edit_window, width=30)
-    # doe_edit_window.grid(row=2, column=1, padx=15)
-
-    # salary_edit_window = Entry(edit_window, width=30)
-    # salary_edit_window.grid(row=3, column=1, padx=15)
-
     emp_id = emp_id_box.get()
 
     connection.execute('''UPDATE employees SET
@@ -98,6 +85,7 @@ def update_emp():
 
 # EDIT EMPLOYEE
 def edit_emp():
+    global edit_window
     edit_window = tkinter.Tk()
     edit_window.title('Update Employee Record')
     edit_window.geometry('400x300')
@@ -181,6 +169,12 @@ def edit_emp():
 
     connection.commit()
     connection.close()
+
+    f_name.delete(0, END)
+    l_name.delete(0, END)
+    doe.delete(0, END)
+    salary.delete(0, END)
+
 
 # DELETE EMPLOYEE
 def delete_emp():
