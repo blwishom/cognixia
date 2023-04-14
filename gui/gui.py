@@ -4,7 +4,8 @@ import sqlite3
 
 root = tkinter.Tk()
 root.title('Employee Management System')
-root.geometry('450x500')
+root.geometry('550x500')
+root.config(bg='white')
 
 connection = sqlite3.connect('ems_gui.db')
 cursor = connection.cursor()
@@ -46,9 +47,9 @@ def emp_query():
 
     records = ''
     for emp in emp_records:
-        records += str(emp[4]) + ' ' + str(emp[0]) + ' ' + str(emp[1]) + ' ' + str(emp[2]) + ' ' + str(emp[3]) + '\n'
-    emp_label = Label(root, text=records)
-    emp_label.grid(row=12, column=0, pady=(10, 0), columnspan=2)
+        records += 'ID: ' + str(emp[4]) + ', ' + ' Name: ' + str(emp[0]) + ' ' + str(emp[1]) +',  DOE: ' + str(emp[2]) + ',  Salary: $' + str(emp[3]) + '0' + '\n'
+    emp_label = Label(root, text=records, bg='white')
+    emp_label.grid(row=13, column=0, padx=20, pady=(10, 5), columnspan=2)
 
     connection.commit()
     connection.close()
@@ -208,38 +209,38 @@ delete_box = Entry(root, width=30)
 delete_box.grid(row=10, column=1)
 
 #Textbox Labels
-f_name_label = Label(root, text='First Name')
-f_name_label.grid(row=0, column=0, pady=(10, 0))
+f_name_label = Label(root, text='First Name', bg='white')
+f_name_label.grid(row=0, column=0, padx=10, pady=(10, 0))
 
-l_name_label = Label(root, text='Last Name')
-l_name_label.grid(row=1, column=0)
+l_name_label = Label(root, text='Last Name', bg='white')
+l_name_label.grid(row=1, column=0, padx=10, pady=(10, 0))
 
-doe_label = Label(root, text='Date of Employment')
-doe_label.grid(row=2, column=0)
+doe_label = Label(root, text='Date of Employment', bg='white')
+doe_label.grid(row=2, column=0, padx=10, pady=(10, 0))
 
-salary_label = Label(root, text='Salary')
-salary_label.grid(row=3, column=0)
+salary_label = Label(root, text='Salary', bg='white')
+salary_label.grid(row=3, column=0, padx=10, pady=(10, 0))
 
-emp_id__label = Label(root, text='Edit Employee ID')
+emp_id__label = Label(root, text='Edit Employee ID', bg='white')
 emp_id__label.grid(row=7, column=0)
 
-delete_box_label = Label(root, text='Remove Employee ID')
-delete_box_label.grid(row=10, column=0)
+delete_box_label = Label(root, text='Remove Employee ID', bg='white')
+delete_box_label.grid(row=10, padx=(15, 0), column=0)
 
 #Buttons
-submit_button = Button(root, text='Add Employee to Database', command=submit_employee)
-submit_button.grid(row=4, column=0, columnspan=3, padx=10, pady=(30, 0), ipadx=62.5)
+submit_button = Button(root, text='Add Employee to Database', command=submit_employee, bg='spring green')
+submit_button.grid(row=4, column=0, columnspan=3, padx=10, pady=(10, 10), ipadx=62.5)
 
-query_button = Button(root, text='Employee Records', command=emp_query)
-query_button.grid(row=5, column=0, columnspan=3, padx=10, pady=10, ipadx=90)
+query_button = Button(root, text='Employee Records', command=emp_query, bg='spring green')
+query_button.grid(row=12, column=0, columnspan=3, padx=10, pady=10, ipadx=90)
 
-edit_button = Button(root, text='Edit Employee', command=edit_emp)
+edit_button = Button(root, text='Edit Employee', command=edit_emp, bg='spring green')
 edit_button.grid(row=9, column=0, columnspan=3, padx=10, pady=10, ipadx=90)
 
 # update_button = Button(root, text='Update Employee', command=edit_emp)
 # update_button.grid(row=9, column=0, columnspan=3, padx=10, pady=10, ipadx=90)
 
-delete_button = Button(root, text='Remove Employee', command=delete_emp)
+delete_button = Button(root, text='Remove Employee', command=delete_emp, bg='tomato')
 delete_button.grid(row=11, column=0, columnspan=3, padx=10, pady=10, ipadx=90)
 
 connection.commit()
