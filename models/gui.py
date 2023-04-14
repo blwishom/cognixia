@@ -94,6 +94,7 @@ def update_emp():
     edit_window.destroy()
 
 
+# EDIT EMPLOYEE
 def edit_emp():
     edit_window = tkinter.Tk()
     edit_window.title('Update Employee Record')
@@ -160,15 +161,16 @@ def edit_emp():
     salary_label_edit_window = Label(edit_window, text='Salary')
     salary_label_edit_window.grid(row=3, column=0)
 
-    #Buttons
-    submit_button = Button(edit_window, text='Submit Edit', command=submit_employee)
-    submit_button.grid(row=4, column=0, columnspan=3, padx=10, pady=(30, 0), ipadx=62.5)
-
     for emp in emp_records:
         f_name_edit_window.insert(0, emp[0])
         l_name_edit_window.insert(0, emp[1])
         doe_edit_window.insert(0, emp[2])
         salary_edit_window.insert(0, emp[3])
+
+    #Buttons
+    submit_button = Button(edit_window, text='Submit Edit', command=submit_employee)
+    submit_button.grid(row=4, column=0, columnspan=3, padx=10, pady=(30, 0), ipadx=62.5)
+
 
     connection.commit()
     connection.close()
@@ -232,6 +234,9 @@ query_button.grid(row=5, column=0, columnspan=3, padx=10, pady=10, ipadx=90)
 
 edit_button = Button(root, text='Edit Employee', command=edit_emp)
 edit_button.grid(row=9, column=0, columnspan=3, padx=10, pady=10, ipadx=90)
+
+# update_button = Button(root, text='Update Employee', command=edit_emp)
+# update_button.grid(row=9, column=0, columnspan=3, padx=10, pady=10, ipadx=90)
 
 delete_button = Button(root, text='Remove Employee', command=delete_emp)
 delete_button.grid(row=11, column=0, columnspan=3, padx=10, pady=10, ipadx=90)
