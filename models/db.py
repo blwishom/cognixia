@@ -35,15 +35,6 @@ def insert_department(department):
     cursor.execute(f"INSERT INTO departments (name, employee_count, department_domain, labor_cost) VALUES(?, ?, ?, ?)", params)
     db.commit()
 
-
-def view_departments():
-    db = sqlite3.connect('ems.db')
-    cursor = db.cursor()
-    cursor.execute('SELECT * FROM departments')
-    results = cursor.fetchall()
-    db.close()
-    return results
-
 def view_departments():
     db = sqlite3.connect('ems.db')
 
