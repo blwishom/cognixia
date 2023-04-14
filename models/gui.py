@@ -53,27 +53,29 @@ def emp_query():
     connection.commit()
     connection.close()
 
+# UPDATE EMPLOYEE
 def update_emp():
     edit_window = tkinter.Tk()
     edit_window.title('Update Employee Record')
     edit_window.geometry('400x300')
+
     connection = sqlite3.connect('ems.db')
     cursor = connection.cursor()
 
-     #Textboxes
-    f_name_edit_window = Entry(edit_window, width=30)
-    f_name_edit_window.grid(row=0, column=1, padx=15, pady=(20, 0))
+    #  #Textboxes
+    # f_name_edit_window = Entry(edit_window, width=30)
+    # f_name_edit_window.grid(row=0, column=1, padx=15, pady=(20, 0))
 
-    l_name_edit_window = Entry(edit_window, width=30)
-    l_name_edit_window.grid(row=1, column=1, padx=15)
+    # l_name_edit_window = Entry(edit_window, width=30)
+    # l_name_edit_window.grid(row=1, column=1, padx=15)
 
-    doe_edit_window = Entry(edit_window, width=30)
-    doe_edit_window.grid(row=2, column=1, padx=15)
+    # doe_edit_window = Entry(edit_window, width=30)
+    # doe_edit_window.grid(row=2, column=1, padx=15)
 
-    salary_edit_window = Entry(edit_window, width=30)
-    salary_edit_window.grid(row=3, column=1, padx=15)
+    # salary_edit_window = Entry(edit_window, width=30)
+    # salary_edit_window.grid(row=3, column=1, padx=15)
 
-    emp_id = delete_box.get()
+    emp_id = emp_id_box.get()
 
     connection.execute('''UPDATE employees SET
             first_name = :first,
@@ -103,6 +105,11 @@ def edit_emp():
     cursor = connection.cursor()
 
     emp_id = emp_id_box.get()
+
+    global f_name_edit_window
+    global l_name_edit_window
+    global doe_edit_window
+    global salary_edit_window
 
     #Textboxes
     f_name_edit_window = Entry(edit_window, width=30)
@@ -168,7 +175,7 @@ def edit_emp():
         salary_edit_window.insert(0, emp[3])
 
     #Buttons
-    submit_button = Button(edit_window, text='Submit Edit', command=submit_employee)
+    submit_button = Button(edit_window, text='Submit Edit', command=update_emp)
     submit_button.grid(row=4, column=0, columnspan=3, padx=10, pady=(30, 0), ipadx=62.5)
 
 
