@@ -18,6 +18,20 @@ import matplotlib.pyplot as plt
 .xticks(rotation = 45) ===> changes descriptive label angles outside of graph
 .savefig('./<name file>.png') ===> save graphic in file
 
+explode = np.where(df['expenses'] >= max_budget, .1 **if condition is true**, 0 **if condition is false**)
+.pie(df['.....'], labels = df.index, shadow = True or False, startangle=50, autopct='%1.f%%, explode) ===> creates a pie chart
+
+.show() ===> displays
+
+
+*****************ADD COLUMN TO DF*******************
+df['add column'] = df[]
+
+
+*******ADD TOGETHER IN SAME TABLE*********
+df.index **returns series** + df[''].astype(str)
+
+
 ********************PLOTTING POINTS/MARKERS AND LINES****************************
 #adding lines:
 hlines = horizontal lines
