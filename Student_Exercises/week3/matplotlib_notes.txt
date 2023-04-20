@@ -14,6 +14,8 @@ import matplotlib.pyplot as plt
 .ylabel('<name y-axis label>)
 .title(<set title of graph>)
 .grid() ===> adds a grid to the graph
+.bar() ===> creates bars for chart graphic
+.xticks(rotation = 45) ===> changes descriptive label angles outside of graph
 
 ********************PLOTTING POINTS/MARKERS AND LINES****************************
 #adding lines:
