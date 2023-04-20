@@ -1,4 +1,4 @@
-Importing:
+***************************IMPORTING*************************************
 import matplotlib.pyplot as plt
 
 
@@ -34,7 +34,7 @@ ex. plt.plot(0, 0, marker='o')
 
 #adding a peak point:
 #add a peak point:
-df['sin(x)'].max()
+plt.plot(df[df['cos(x)'] == df['cos(x)].max()].index, df['sin(x)].max(), marker='*')
 df['cos(x)'].max()
 
 OR
