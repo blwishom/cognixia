@@ -15,7 +15,7 @@ import matplotlib.pyplot as plt
 .title(<set title of graph>)
 .grid() ===> adds a grid to the graph
 
-********************PLOTTING MARKERS AND LINES****************************
+********************PLOTTING POINTS/MARKERS AND LINES****************************
 #adding lines:
 hlines = horizontal lines
 plt.hlines(0, -5, 5, color='.....', alpha=.75) (alpha is the transparency)
@@ -28,3 +28,14 @@ plt.vlines(0, -1.1, 1.1, color='.....', alpha=.75)
 #adding a point/marker:
 plt.plot(<x-value>, <y-value>, marker='...')
 ex. plt.plot(0, 0, marker='o')
+
+#adding a peak point:
+#add a peak point:
+df['sin(x)'].max()
+df['cos(x)'].max()
+
+OR
+
+#add a peak line:
+plt.hlines(df['sin(x)'].max(), -5, 5)
+plt.hlines(df['cos(x)'].max(), -5, 5)
