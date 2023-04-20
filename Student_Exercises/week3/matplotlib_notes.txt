@@ -16,6 +16,7 @@ import matplotlib.pyplot as plt
 .grid() ===> adds a grid to the graph
 .bar() ===> creates bars for chart graphic
 .xticks(rotation = 45) ===> changes descriptive label angles outside of graph
+.savefig('./<name file>.png') ===> save graphic in file
 
 ********************PLOTTING POINTS/MARKERS AND LINES****************************
 #adding lines:
