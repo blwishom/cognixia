@@ -3,7 +3,7 @@ from datetime import datetime
 
 null = 0
 ids = pd.Series([5, 11, 26, 31])
-names = pd.Series(['Joe', 'Paula', 'Wendy', 'Devin'])
+names = pd.Series(['Joe', 'Paula', 'Wendy', 'Billy'])
 salary = pd.Series([75000, 85000, 75000, None])
 departments = pd.Series(['HR', 'Maintenence', 'IT', 'Finance'])
 startDate = pd.date_range("2023-04-18", periods=4)
@@ -41,7 +41,7 @@ departments_df = pd.DataFrame({
 
 # print(employeeData.query('Salary > 0'))
 
-# print(employeeData)
+print(employeeData)
 # print(names[0], f'\'s salary is ${salary[0]:.2f}.')
 # print(f'{names[1]} works in the {departments[1]} department.')
 
