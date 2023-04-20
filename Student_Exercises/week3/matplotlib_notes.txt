@@ -1,0 +1,30 @@
+Importing:
+import matplotlib.pyplot as plt
+
+
+**********************AXIS AND LABELING**********************************
+<dataFrameName>.plot ===> returns visual plot graph (don't need import to use .plot)
+
+#x-axis is the default axis
+#y-axis is the value axis
+
+#plt attributes:
+.plot
+.xlabel('<name x-axis label>)
+.ylabel('<name y-axis label>)
+.title(<set title of graph>)
+.grid() ===> adds a grid to the graph
+
+********************PLOTTING MARKERS AND LINES****************************
+#adding lines:
+hlines = horizontal lines
+plt.hlines(0, -5, 5, color='.....', alpha=.75) (alpha is the transparency)
+
+vlines = vertical lines
+plt.vlines(0, -1.1, 1.1, color='.....', alpha=.75)
+
+#plt.legend() ====> gives graph a legend
+
+#adding a point/marker:
+plt.plot(<x-value>, <y-value>, marker='...')
+ex. plt.plot(0, 0, marker='o')
