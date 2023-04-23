@@ -56,3 +56,8 @@ print(condition, '<---condition')
 
 condition2 = arr3[arr3 <= 3]
 print(condition2)
+
+print(arr3[:4].sum())
+print(arr3.max())
+print(arr3.std())
+print(arr3.transpose())
