@@ -102,3 +102,7 @@ condition = series1[series1 < 3]
 condition2 = series3[series3 != 2]
 print(condition, '<---CONDITION')
 print(condition2, '<---CONDITION 2')
+
+# MATH
+describe = series1.describe()
+print(describe, '<---DESCRIBE')
