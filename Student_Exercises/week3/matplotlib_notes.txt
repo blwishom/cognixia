@@ -1,6 +1,8 @@
 ***************************IMPORTING*************************************
 import matplotlib.pyplot as plt
 
+!pip install matplotlib
+
 
 **********************AXIS AND LABELING**********************************
 <dataFrameName>.plot ===> returns visual plot graph (don't need import to use .plot)
@@ -19,7 +21,7 @@ import matplotlib.pyplot as plt
 .savefig('./<name file>.png') ===> save graphic in file
 
 explode = np.where(df['expenses'] >= max_budget, .1 **if condition is true**, 0 **if condition is false**)
-.pie(df['.....'], labels = df.index, shadow = True or False, startangle=50, autopct='%1.f%%, explode) ===> creates a pie chart
+.pie(df['.....'], labels = df.index, shadow = True or False, startangle=50, autopct='%1.f%%', explode) ===> creates a pie chart
 
 .show() ===> displays
 
