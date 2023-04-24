@@ -65,44 +65,64 @@ import pandas as pd
 
 # ********************     PANDAS     ********************
 series1 = pd.Series([5, 4, 3, 2, 1])
-series2 = pd.Series({5: 'five', 4: 'four', 3: 'three', 'two': 'two or 2', 1: 'one'})
+series2 = pd.Series({5: 'five', 4: 'four', 3: 'three', 2: 'two or 2', 1: 'one'})
 series3 = pd.Series({'one': 1, 'two': 2, 'three': 3, 'four': '4 or four', 'five': '5 or five'})
 series4 = pd.Series(['uno', 'dos', 'tres', 'quatro'])
 
-# LOC and ILOC
-Iloc = series1.iloc[0]
-Loc = series2.loc[3]
-print(Iloc)
-print(Loc)
+# # LOC and ILOC
+# Iloc = series1.iloc[0]
+# Loc = series2.loc[3]
+# print(Iloc)
+# print(Loc)
 
-print('============================')
+# print('============================')
 
-Iloc2 = series3.iloc[4]
-loc2 = series3['four']
-print(Iloc2)
-print(loc2)
+# Iloc2 = series3.iloc[4]
+# loc2 = series3['four']
+# print(Iloc2)
+# print(loc2)
 
-print('============================')
+# print('============================')
 
-# HEAD and TAIL
-head = series4.head(2)
-head2 = series3.head(2)
-print(head, '<---HEAD')
-print(head2, '<---HEAD 2')
+# # HEAD and TAIL
+# head = series4.head(2)
+# head2 = series3.head(2)
+# print(head, '<---HEAD')
+# print(head2, '<---HEAD 2')
 
-tail = series2.tail(3)
-tail2 = series4.tail(2)
-print(tail, '<---TAIL')
-print(tail2, '<---TAIL 2')
+# tail = series2.tail(3)
+# tail2 = series4.tail(2)
+# print(tail, '<---TAIL')
+# print(tail2, '<---TAIL 2')
 
-print('============================')
+# print('============================')
 
-# CONDITION
-condition = series1[series1 < 3]
-condition2 = series3[series3 != 2]
-print(condition, '<---CONDITION')
-print(condition2, '<---CONDITION 2')
+# # CONDITION
+# condition = series1[series1 < 3]
+# condition2 = series3[series3 != 2]
+# print(condition, '<---CONDITION')
+# print(condition2, '<---CONDITION 2')
 
-# MATH
-describe = series1.describe()
-print(describe, '<---DESCRIBE')
+# # MATH
+# describe = series1.describe()
+# print(describe, '<---DESCRIBE')
+
+# absolute = series1.abs()
+# print(absolute, '<---ABSOLUTE')
+
+# MANIPULATION
+# mapped = series1.map(series1)
+print(series1)
+print(series1.map(series2), '<---MAPPED')
+
+concatted = pd.concat([series1, series3])
+print(concatted, '<---CONCAT AN ARRAY W DICTIONARY')
+
+concatted2 = pd.concat([series1, series3], ignore_index=True)
+print(concatted2, '<---CONCAT AN ARRAY W DICTIONARY IGNORE INDEX')
+
+concatted3 = pd.concat([series1, series4])
+print(concatted3, '<---CONCAT 2 ARRAYS')
+
+concatted4 = pd.concat([series1, series4], ignore_index=True)
+print(concatted4, '<---CONCAT 2 ARRAYS IGNORE INDEX')
