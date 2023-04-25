@@ -1,0 +1,2 @@
+In the little league entity-relationship assignment I created tables of Player, Guardian, Coach, and Team.
+
