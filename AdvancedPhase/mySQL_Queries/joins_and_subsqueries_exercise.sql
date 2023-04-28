@@ -9,7 +9,7 @@
 -- # Query #1
 -- SELECT title as Title, rating as Rating, name as Category_Name
 -- FROM film
--- JOIN category
+-- LEFT JOIN category
 -- 	ON film.film_id = category.category_id
 -- WHERE rating != 'PG-13';
 
@@ -41,3 +41,6 @@
 -- 	WHERE rating = 'PG-13'
 --     )
 -- ORDER BY replacement_cost;
+
+
+
