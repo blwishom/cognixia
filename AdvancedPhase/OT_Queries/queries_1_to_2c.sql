@@ -46,3 +46,14 @@ JOIN product_categories
 JOIN warehouses
 	ON warehouses.warehouse_id = inventories.warehouse_id
 WHERE quantity > 100 and warehouse_name = 'Toronto' and category_name = 'CPU';
+
+-- # Query 3a
+SELECT avg(list_price) as Avg_List_Price
+FROM products;
+
+-- # Query 3b
+SELECT product_categories.category_name as Category_Name, round(avg(list_price), 2) as Avg_List_Price
+FROM products
+JOIN product_categories
+	ON products.category_id = product_categories.category_id
+GROUP BY Category_Name;
