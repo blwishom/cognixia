@@ -22,7 +22,7 @@ FROM locations
 WHERE state IS null;
 
 -- # Query 1e
-SELECT count(country_id) as Countries_With_Loctions
+SELECT count(DISTINCT country_id) as Countries_With_Loctions
 FROM locations;
 
 -- # Query 2a
@@ -34,7 +34,7 @@ WHERE list_price between 100 and 150;
 SELECT products.product_name as Product_Name, products.list_price as List_Price, product_categories.category_name as Category_Name
 FROM products
 JOIN product_categories
-	ON products.product_id = product_categories.category_id;
+	ON products.category_id = product_categories.category_id;
 
 -- # Query 2c
 SELECT products.product_name, products.list_price
