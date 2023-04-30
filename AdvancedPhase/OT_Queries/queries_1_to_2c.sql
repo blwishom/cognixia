@@ -22,7 +22,7 @@ FROM locations
 WHERE state IS null;
 
 -- # Query 1e
-SELECT DISTINCT count(country_id) as Countries_With_Loctions
+SELECT count(country_id) as Countries_With_Loctions
 FROM locations;
 
 -- # Query 2a
@@ -37,12 +37,12 @@ JOIN product_categories
 	ON products.product_id = product_categories.category_id;
 
 -- # Query 2c
-SELECT products.product_name, products.list_price, quantity, category_name
+SELECT products.product_name, products.list_price
 FROM products
 JOIN inventories
 	ON products.product_id = inventories.product_id
 JOIN product_categories
-	ON inventories.warehouse_id = product_categories.category_id
+	ON product_categories.category_id = products.category_id
 JOIN warehouses
-	ON warehouses.warehouse_id = warehouses.warehouse_id
+	ON warehouses.warehouse_id = inventories.warehouse_id
 WHERE quantity > 100 and warehouse_name = 'Toronto' and category_name = 'CPU';
