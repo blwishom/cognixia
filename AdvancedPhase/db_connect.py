@@ -24,9 +24,14 @@ with conn.cursor() as cursor:
         age INT
         );''')
 
-cursor.execute("INSERT INTO pets (name, species, age) VALUES ()")
-cursor.execute("INSERT INTO pets (name, species, age) VALUES ()")
-cursor.execute("INSERT INTO pets (name, species, age) VALUES ()")
+# # INSERT VALUES
+# cursor.execute("INSERT INTO pets (name, species, age) VALUES ('Charlie', 'Cocker Spaniel', 2)")
+# cursor.execute("INSERT INTO pets (name, species, age) VALUES ('Toodles', 'Poodle', 4)")
+# cursor.execute("INSERT INTO pets (name, species, age) VALUES ('Barky', 'Labrador Retriever', 3)")
+
+# INSERT VALUES MORE DYNAMICALLY USING STRING TEMPLATE SYNTAX
+cursor.execute("INSERT INTO pets (name, species, age) VALUES (%s, %s, %s)")
+inserts = [('Charlie', 'Cocker Spaniel', 2), ('Toodles', 'Poodle', 4), ('Barky', 'Labrador Retriever', 3)]
 conn.commit()
 
 cursor.execute("SELECT * FROM pets;")
