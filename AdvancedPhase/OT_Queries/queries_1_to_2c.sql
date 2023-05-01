@@ -57,3 +57,12 @@ FROM products
 JOIN product_categories
 	ON products.category_id = product_categories.category_id
 GROUP BY Category_Name;
+
+-- Query 4a
+SELECT list_price as List_Price, count(list_price) as Count_of_List_Price
+FROM products
+GROUP BY list_price
+ORDER BY list_price desc
+LIMIT 2;
+
+
