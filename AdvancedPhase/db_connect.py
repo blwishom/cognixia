@@ -11,7 +11,7 @@ conn = mysql.connector.connect(
     host = 'localhost',
     username = 'root',
     password = 'root',
-    database='<<DB Name>>'
+    database='<<<DB Name>>>'
 )
 
 cursor = conn.cursor()
@@ -34,12 +34,22 @@ cursor.execute("INSERT INTO pets (name, species, age) VALUES (%s, %s, %s)")
 inserts = [('Charlie', 'Cocker Spaniel', 2), ('Toodles', 'Poodle', 4), ('Barky', 'Labrador Retriever', 3)]
 conn.commit()
 
+# **********************************               OR               **********************************
+sqlDB = """INSERT INTO pets (name, species, age) VALUES (%s, %s, %s)"""
+inserts = [('Charlie', 'Cocker Spaniel', 2), ('Toodles', 'Poodle', 4), ('Barky', 'Labrador Retriever', 3)]
+cursor.execute(sqlDB, inserts)
+conn.commit()
+
+
+
 cursor.execute("SELECT * FROM pets;")
 for row in cursor:
     print(row)
 
 result = cursor.fetchone()
+result2 = cursor.fetchall()
 print(result)
+print(result2)
 
 cursor.execute('SHOW DATABASES')
 print(cursor)
