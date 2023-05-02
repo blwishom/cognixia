@@ -42,7 +42,7 @@ conn.commit()
 
 
 
-cursor.execute("SELECT * FROM pets;")
+cursor.execute("SELECT * FROM pets")
 for row in cursor:
     print(row)
 
