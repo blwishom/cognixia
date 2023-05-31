@@ -1,12 +1,25 @@
+# DOUBLE NUMS #
 nums = [4, 8, 15, 16, 23, 42]
-## LIST COMP
+# list comp
 double_nums = [num*2 for num in nums]
 
-## FOR LOOP
+# # for loop
 # double_nums = []
 # for num in nums:
 #   double_nums.append(num*2)
 
 print(double_nums)
+
+# SQUARED NUMS IN RANGE #
+nums = range(11)
+# # list comp
+squares = [num**2 for num in nums]
+
+# # for loop
+# squares = []
+# for num in nums:
+#     squares.append(num**2)
+
+print(squares)
 
 
