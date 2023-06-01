@@ -37,3 +37,8 @@ print(divide_by_two)
 nums = [4, 8, 15, 16, 23, 42]
 parity = [num%2 for num in nums]
 print(parity)
+
+# STRINGS ADD HELLO #
+names = ["Elaine", "George", "Jerry", "Cosmo"]
+greetings = ['Hello, '+name for name in names]
+print(greetings)
