@@ -28,4 +28,7 @@ nums = [4, 8, 15, 16, 23, 42]
 add_ten = [num+10 for num in nums]
 print(add_ten)
 
-
+# DIVIDE BY 2 #
+nums = [4, 8, 15, 16, 23, 42]
+divide_by_two = [int(num/2) for num in nums]
+print(divide_by_two)
