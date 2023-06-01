@@ -47,3 +47,8 @@ print(greetings)
 names = ["Elaine", "George", "Jerry", "Cosmo"]
 first_character = [name[0] for name in names]
 print(first_character)
+
+# LENGTH OF NAMES #
+names = ["Elaine", "George", "Jerry", "Cosmo"]
+lengths = [len(name) for name in names]
+print(lengths)
