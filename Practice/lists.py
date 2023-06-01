@@ -86,3 +86,9 @@ a = [1.0, 2.0, 3.0]
 b = [4.0, 5.0, 6.0]
 sums = [int(a1)+int(a2) for (a1,a2) in zip(a,b)]
 print(sums)
+
+# ZIP DIVIDE #
+a = [1.0, 2.0, 3.0]
+b = [4.0, 5.0, 6.0]
+quotients = [int(b1/a1) for (b1,a1) in zip(b,a)]
+print(quotients)
