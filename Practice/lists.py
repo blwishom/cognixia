@@ -75,3 +75,8 @@ print(product)
 nested_lists = [[4, 8], [16, 15], [23, 42]]
 greater_than  = [list[0]>list[1] for list in nested_lists]
 print(greater_than)
+
+# INDEX A SUB LIST #
+nested_lists = [[4, 8], [16, 15], [23, 42]]
+first_only = [list[0] for list in nested_lists]
+print(first_only)
