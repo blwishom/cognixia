@@ -42,3 +42,8 @@ print(parity)
 names = ["Elaine", "George", "Jerry", "Cosmo"]
 greetings = ['Hello, '+name for name in names]
 print(greetings)
+
+# INDEX A STRING #
+names = ["Elaine", "George", "Jerry", "Cosmo"]
+first_character = [name[0] for name in names]
+print(first_character)
