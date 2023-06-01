@@ -32,3 +32,8 @@ print(add_ten)
 nums = [4, 8, 15, 16, 23, 42]
 divide_by_two = [int(num/2) for num in nums]
 print(divide_by_two)
+
+# NUMS % 2 IF EVEN PRINT 0 IF ODD PRINT 1 #
+nums = [4, 8, 15, 16, 23, 42]
+parity = [num%2 for num in nums]
+print(parity)
