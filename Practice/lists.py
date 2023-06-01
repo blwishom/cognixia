@@ -66,8 +66,12 @@
 # greater_than_two = [num > 2 for num in nums]
 # print(greater_than_two)
 
-# MATH #
+# MATH PRODUCT #
 nested_lists = [[4, 8], [15, 16], [23, 42]]
 product = [list[0]*list[1] for list in nested_lists]
 print(product)
 
+# MATH GREATER THAN #
+nested_lists = [[4, 8], [16, 15], [23, 42]]
+greater_than  = [list[0]>list[1] for list in nested_lists]
+print(greater_than)
