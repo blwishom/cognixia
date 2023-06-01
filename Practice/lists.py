@@ -52,3 +52,13 @@ print(first_character)
 names = ["Elaine", "George", "Jerry", "Cosmo"]
 lengths = [len(name) for name in names]
 print(lengths)
+
+# BOOLEANS #
+booleans = [True, False, True]
+opposite = [not boo for boo in booleans]
+print(opposite)
+
+names = ["Elaine", "George", "Jerry", "Cosmo"]
+is_Jerry = [name is "Jerry" for name in names]
+print(is_Jerry)
+
