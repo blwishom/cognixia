@@ -80,3 +80,9 @@ print(greater_than)
 nested_lists = [[4, 8], [16, 15], [23, 42]]
 first_only = [list[0] for list in nested_lists]
 print(first_only)
+
+# ZIP SUM #
+a = [1.0, 2.0, 3.0]
+b = [4.0, 5.0, 6.0]
+sums = [int(a1)+int(a2) for (a1,a2) in zip(a,b)]
+print(sums)
