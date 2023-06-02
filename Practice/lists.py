@@ -92,3 +92,9 @@ a = [1.0, 2.0, 3.0]
 b = [4.0, 5.0, 6.0]
 quotients = [int(b1/a1) for (b1,a1) in zip(b,a)]
 print(quotients)
+
+# ZIP STRINGS #
+capitals = ["Santiago", "Paris", "Copenhagen"]
+countries = ["Chile", "France", "Denmark"]
+locations = [capitals1 + ', ' + countries1 for (capitals1, countries1) in zip(capitals, countries)]
+print(locations)
