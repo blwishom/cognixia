@@ -98,3 +98,9 @@ capitals = ["Santiago", "Paris", "Copenhagen"]
 countries = ["Chile", "France", "Denmark"]
 locations = [capitals1 + ', ' + countries1 for (capitals1, countries1) in zip(capitals, countries)]
 print(locations)
+
+# ZIP GREATER THAN #
+a = [30, 42, 10]
+b = [15, 16, 17]
+greater_than = [a1 > b1 for (a1, b1) in zip(a, b)]
+print(greater_than)
