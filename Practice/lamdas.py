@@ -16,3 +16,15 @@ ends_in_a = lambda str: str.endswith('a')
 
 print(ends_in_a("data"))
 print(ends_in_a("aardvark"))
+
+
+double_or_zero = lambda num: num*2 if num > 10 else 0
+
+print(double_or_zero(15))
+print(double_or_zero(5))
+
+
+even_or_odd = lambda num: 'even' if num%2==0 else 'odd'
+
+print(even_or_odd(10))
+print(even_or_odd(5))
