@@ -42,3 +42,14 @@ print(rate_movie(9.2))
 print(rate_movie(7.2))
 
 
+ones_place = lambda num: num%10
+
+print(ones_place(123))
+print(ones_place(4))
+
+
+double_square = lambda num: (num**2)*2
+
+print(double_square(5))
+print(double_square(3))
+
