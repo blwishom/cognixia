@@ -53,3 +53,8 @@ double_square = lambda num: (num**2)*2
 print(double_square(5))
 print(double_square(3))
 
+import random
+add_random = lambda num: num + random.randint(1, 10)
+
+print(add_random(5))
+print(add_random(100))
