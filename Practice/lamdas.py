@@ -28,3 +28,17 @@ even_or_odd = lambda num: 'even' if num%2==0 else 'odd'
 
 print(even_or_odd(10))
 print(even_or_odd(5))
+
+
+multiple_of_three = lambda num: 'multiple of three' if num%3==0 else 'not a multiple'
+
+print(multiple_of_three(9))
+print(multiple_of_three(10))
+
+
+rate_movie = lambda rating: 'I liked this movie' if rating > 8.5 else 'This movie was not very good'
+
+print(rate_movie(9.2))
+print(rate_movie(7.2))
+
+
