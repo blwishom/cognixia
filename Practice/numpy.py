@@ -51,3 +51,10 @@ print(jeremy_test_2)
 
 manual_adwoa_test_1 = np.array([test_1[1], test_1[2]])
 print(manual_adwoa_test_1)
+
+student_scores = np.array([[92, 94, 88, 91, 87],
+                           [79, 100, 86, 93, 91],
+                           [87, 85, 72, 90, 92]])
+
+tanya_test_3 = student_scores[2, 0]
+print(tanya_test_3)
