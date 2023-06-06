@@ -28,3 +28,10 @@ total_grade = test_1 + test_2 + test_3_fixed
 final_grade = total_grade / 3
 
 print(final_grade)
+
+# creating 2-D arrays
+coin_toss = np.array([1, 0, 0, 1, 0])
+print(coin_toss, '<---1st Coin Toss')
+
+coin_toss_again = np.array([[1, 0, 0, 1, 0], [0, 0, 1, 1, 1]])
+print(coin_toss_again, '<---2nd Coin Toss')
