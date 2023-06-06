@@ -35,3 +35,19 @@ print(coin_toss, '<---1st Coin Toss')
 
 coin_toss_again = np.array([[1, 0, 0, 1, 0], [0, 0, 1, 1, 1]])
 print(coin_toss_again, '<---2nd Coin Toss')
+
+# indexing 1-D and 2-D arrays
+# 	Tanya	Manual	Adwoa	Jeremy	Cody
+# test_1	92	94	88	91	87
+# test_2	79	100	86	93	91
+# test_3	87	85	72	90	92
+
+test_1 = np.array([92, 94, 88, 91, 87])
+test_2 = np.array([79, 100, 86, 93, 91])
+test_3 = np.array([87, 85, 72, 90, 92])
+
+jeremy_test_2 = test_2[3]
+print(jeremy_test_2)
+
+manual_adwoa_test_1 = np.array([test_1[1], test_1[2]])
+print(manual_adwoa_test_1)
