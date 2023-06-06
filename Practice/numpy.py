@@ -61,3 +61,9 @@ print(tanya_test_3)
 
 cody_test_scores = student_scores[0:, 4]
 print(cody_test_scores)
+
+# logical operators
+porridge = np.array([79, 65, 50, 63, 56, 90, 85, 98, 79, 51])
+
+cold = porridge[(porridge < 60)]
+hot = porridge[(porridge > 80)]
