@@ -58,3 +58,6 @@ student_scores = np.array([[92, 94, 88, 91, 87],
 
 tanya_test_3 = student_scores[2, 0]
 print(tanya_test_3)
+
+cody_test_scores = student_scores[0:, 4]
+print(cody_test_scores)
