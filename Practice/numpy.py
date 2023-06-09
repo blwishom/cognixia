@@ -120,3 +120,23 @@ store_three = np.array([7, 5, 4, 3, 2, 7, 7])
 store_one_avg = np.mean(store_one)
 store_two_avg = np.mean(store_two)
 store_three_avg = np.mean(store_three)
+print(store_one_avg, store_two_avg, store_three_avg)
+
+
+# STORE MEANS GREATER THAN 7 INTO BEST_SELLER VARIABLE
+
+# direct assignment
+best_seller = store_two
+
+# list comp
+means = [store_one_avg, store_two_avg, store_three_avg]
+best_seller = [mean  for mean in means if mean > 7]
+print(best_seller)
+
+# for loop
+means = [store_one_avg, store_two_avg, store_three_avg]
+best_seller = []
+for mean in means:
+  if mean > 7:
+    best_seller.append(mean)
+print(best_seller)
