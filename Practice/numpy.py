@@ -219,3 +219,19 @@ print(pumpkin_std)
 
 acorn_squash_std = np.std(acorn_squash)
 print(acorn_squash_std)
+
+# finding percentil, quartile, and standard deviation
+rainfall = np.array([5.21, 3.76, 3.27, 2.35, 1.89, 1.55, 0.65, 1.06, 1.72, 3.35, 4.82, 5.11])
+
+rain_mean = np.mean(rainfall)
+print(rain_mean)
+rain_median = np.median(rainfall)
+print(rain_median)
+first_quarter = np.percentile(rainfall, 25)
+print(first_quarter)
+third_quarter = np.percentile(rainfall, 75)
+print(third_quarter)
+interquartile_range = third_quarter - first_quarter
+print(interquartile_range)
+rain_std = np.std(rainfall)
+print(rain_std)
