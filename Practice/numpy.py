@@ -180,7 +180,11 @@ print(large_set_median)
 
 # NUMPY PERCENTILES
 
-# find the 30th percentile of the array
+# find the 30th and 70th percentile of the array
 patrons = np.array([ 2, 6, 14, 4, 3, 9, 1, 11, 4, 2, 8])
+
 thirtieth_percentile = np.percentile(patrons, 30)
 print(thirtieth_percentile)
+
+seventieth_percentile = np.percentile(patrons, 70)
+print(seventieth_percentile)
