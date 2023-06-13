@@ -46,3 +46,25 @@ SELECT *
 FROM classes
 INNER JOIN students
   ON classes.id = students.class_id;
+
+
+
+
+SELECT count(*)
+FROM newspaper
+WHERE start_month <= 3 and end_month >= 3;
+
+SELECT *
+FROM newspaper
+CROSS JOIN months;
+
+SELECT *
+FROM newspaper
+CROSS JOIN months
+WHERE start_month <= month and end_month >= month;
+
+SELECT month, COUNT(*)
+FROM newspaper
+CROSS JOIN months
+WHERE start_month <= month and end_month >= month
+GROUP BY month;
