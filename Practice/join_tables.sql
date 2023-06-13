@@ -77,3 +77,18 @@ FROM newspaper
 UNION
 SELECT *
 FROM online;
+
+
+
+
+
+WITH previous_query as (
+  SELECT customer_id, COUNT(subscription_id) AS 'subscriptions'
+FROM orders
+GROUP BY customer_id
+)
+
+SELECT customers.customer_name, previous_query.subscriptions
+FROM customers
+JOIN previous_query
+  ON customers.customer_id = previous_query.customer_id;
