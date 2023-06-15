@@ -55,3 +55,15 @@ SELECT
 ) AS 'chart_position_change'
 FROM
    streams;
+
+
+
+SELECT
+   ROW_NUMBER() OVER (
+      ORDER BY streams_millions DESC
+   ) row_num,
+   artist,
+   week,
+   streams_millions
+FROM
+   streams;
