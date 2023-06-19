@@ -5,17 +5,6 @@ class Dog:
     self.age = age
     self.is_friendly = friendliness
 
-dog1 = Dog("Barker", "Husky", 3)
-dog2 = Dog("Rocky", "Cane Corso", 7, False)
-
-class Dog:
-  def __init__(self, name, breed, age = 0, friendliness=True):
-    self.name = name
-    self.breed = breed
-    self.age = age
-    self.is_friendly = friendliness
-    self.friends = []
-
   def __repr__(self):
     description = "This {breed} named {name} is {age} years old and has {number_of_friends} friends.".format(breed = self.breed, name = self.name, age=self.age, number_of_friends=len(self.friends))
     if self.is_friendly:
@@ -23,6 +12,10 @@ class Dog:
     else:
       description += "{name} is an unfriendly dog.".format(name = self.name)
     return description
+
+dog1 = Dog("Barker", "Husky", 3)
+dog2 = Dog("Rocky", "Cane Corso", 7, False)
+
 
 
 
