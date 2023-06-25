@@ -3,6 +3,8 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 
+''' Binomials... binomial(n, p, size) N = number of trials, P = probability of success, Size = number of experiements '''
+
 #generating random numbers based on probability
 emails = np.random.binomial(500, .05, size=10000)
 
