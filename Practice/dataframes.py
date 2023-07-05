@@ -28,3 +28,8 @@ print(df2)
 Chocolate Cake,chocolate,chocolate,chocolate shavings,
 Birthday Cake,vanilla,vanilla,rainbow sprinkles,
 Carrot Cake,carrot,cream cheese,almonds '''
+
+
+# READ CSV and CONVERT TO DF
+df = pd.read_csv('sample.csv')
+print(df)
