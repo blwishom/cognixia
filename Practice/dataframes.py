@@ -1,3 +1,4 @@
+# CREATE DF
 df1 = pd.DataFrame({
   'Product ID': [1, 2, 3, 4],
   'Product Name': ['t-shirt', 't-shirt', 'skirt', 'skirt'],
@@ -6,7 +7,7 @@ df1 = pd.DataFrame({
 
 print(df1)
 
-
+# ADD ROWS 3-4 and ADD COLUMN NAMES
 df2 = pd.DataFrame([
   [1, 'San Diego', 100],
   [2, 'Los Angeles', 120],
@@ -20,3 +21,10 @@ df2 = pd.DataFrame([
   ])
 
 print(df2)
+
+
+# TRANSFORM DF TO CSV FORMAT
+''' name,cake_flavor,frosting_flavor,topping
+Chocolate Cake,chocolate,chocolate,chocolate shavings,
+Birthday Cake,vanilla,vanilla,rainbow sprinkles,
+Carrot Cake,carrot,cream cheese,almonds '''
