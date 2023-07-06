@@ -33,3 +33,9 @@ Carrot Cake,carrot,cream cheese,almonds '''
 # READ CSV and CONVERT TO DF
 df = pd.read_csv('sample.csv')
 print(df)
+
+
+# READ CSV and PRINT DF INFO
+df = pd.read_csv('imdb.csv')
+print(df.head())
+print(df.info())
