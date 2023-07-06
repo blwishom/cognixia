@@ -56,3 +56,7 @@ df = pd.DataFrame([
 clinic_north = df['clinic_north']
 print(type(clinic_north))
 print(type(df))
+
+# CREATE NEW DF WITH COLUMNS FROM ORIGINAL DF
+clinic_north_south = df[['clinic_north', 'clinic_south']]
+print(type(clinic_north_south))
