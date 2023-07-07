@@ -19,12 +19,9 @@ print(my_db)
 
 my_cursor = my_db.cursor()
 
-# my_cursor.execute('CREATE DATABASE if not exists test_db')
-# my_cursor.execute('SHOW DATABASES')
-my_cursor.execute('CREATE TABLE if not exists students (name VARCHAR(255), age INT(10))')
-my_cursor.execute('SHOW TABLES')
+my_cursor.execute('CREATE DATABASE if not exists test_db')
+my_cursor.execute('SHOW DATABASES')
 
-# for db in my_cursor:
-#     print(db)
-for tb in my_cursor:
-    print(tb)
+
+for db in my_cursor:
+    print(db)
